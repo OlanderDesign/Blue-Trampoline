@@ -113,7 +113,7 @@ body {
 }
 
 [data-bs-theme="dark"] .link-brand:hover {
-  color: var(--blue);
+  color: var(--yellow);
 }
 
 [data-bs-theme="dark"] .btn-outline-secondary {
