@@ -88,7 +88,8 @@ body {
 }
 
 .link-brand:hover {
-  color: var(--red);
+  color: var(--blue);
+  opacity: 0.8;
 }
 
 .theme-toggle {
@@ -113,7 +114,8 @@ body {
 }
 
 [data-bs-theme="dark"] .link-brand:hover {
-  color: var(--yellow);
+  color: var(--red);
+  opacity: 0.8;
 }
 
 [data-bs-theme="dark"] .btn-outline-secondary {
