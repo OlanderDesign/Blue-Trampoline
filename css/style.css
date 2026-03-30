@@ -17,6 +17,7 @@ body {
 }
 
 body {
+  padding-top: 5rem;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--white);
   color: var(--dark);
@@ -39,7 +40,7 @@ body {
 }
 
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
 }
@@ -84,7 +85,7 @@ body {
 .link-brand {
   color: var(--blue);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .link-brand:hover {
@@ -92,12 +93,37 @@ body {
   opacity: 0.8;
 }
 
-.theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1000;
-  backdrop-filter: blur(8px);
+.navbar-blur {
+  background: rgba(251, 250, 248, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46, 49, 53, 0.08);
+}
+
+.brand {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand:hover {
+  color: var(--blue);
+  opacity: 0.8;
+}
+
+.nav-link {
+  color: var(--dark);
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
 }
 
 [data-bs-theme="dark"] .title {
@@ -118,6 +144,33 @@ body {
   opacity: 0.8;
 }
 
+[data-bs-theme="dark"] .navbar-blur {
+  background: rgba(46, 49, 53, 0.88);
+  border-bottom: 1px solid rgba(251, 250, 248, 0.1);
+}
+
+[data-bs-theme="dark"] .brand {
+  color: var(--white);
+}
+
+[data-bs-theme="dark"] .brand:hover {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+[data-bs-theme="dark"] .nav-link {
+  color: var(--white);
+}
+
+[data-bs-theme="dark"] .nav-link:hover {
+  color: var(--white);
+  opacity: 0.8;
+}
+
+[data-bs-theme="dark"] .navbar-toggler {
+  filter: invert(1);
+}
+
 [data-bs-theme="dark"] .btn-outline-secondary {
   color: var(--white);
   border-color: rgba(251, 250, 248, 0.35);
@@ -134,12 +187,20 @@ body {
     --section-space: 4rem;
   }
 
+  body {
+    padding-top: 4.5rem;
+  }
+
   .hero {
     min-height: auto;
   }
 
-  .theme-toggle {
-    top: 0.75rem;
-    right: 0.75rem;
+  .navbar-collapse {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-link {
+    padding: 0.75rem 0;
   }
 }

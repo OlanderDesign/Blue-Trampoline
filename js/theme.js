@@ -21,7 +21,6 @@ function setTheme(theme) {
 
 const savedTheme = localStorage.getItem("theme");
 setTheme(savedTheme || "light");
-
 toggle.addEventListener("click", () => {
   const currentTheme = html.getAttribute("data-bs-theme");
   const nextTheme = currentTheme === "dark" ? "light" : "dark";
