@@ -109,11 +109,11 @@ body {
 }
 
 [data-bs-theme="dark"] .link-brand {
-  color: var(--yellow);
+  color: var(--red);
 }
 
 [data-bs-theme="dark"] .link-brand:hover {
-  color: var(--red);
+  color: var(--blue);
 }
 
 [data-bs-theme="dark"] .btn-outline-secondary {
