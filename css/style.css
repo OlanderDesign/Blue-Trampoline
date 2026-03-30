@@ -52,6 +52,7 @@ body {
 
 .title {
   font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.04em;
   color: var(--blue);
@@ -67,6 +68,7 @@ body {
 
 .body-text {
   font-size: 1rem;
+  font-weight: 300;
   line-height: 1.8;
   margin-bottom: 1rem;
   max-width: 42rem;
