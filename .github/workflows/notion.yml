@@ -1,26 +1,21 @@
 name: Fetch Notion Insights
 
-permissions:
-  contents: write
-
-concurrency:
-  group: notion-sync
-  cancel-in-progress: true
-
 on:
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
-  fetch:
+  fetch-and-update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true
           fetch-depth: 0
 
       - name: Set up Python
@@ -28,28 +23,29 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch Notion data
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync with remote branch
+        run: |
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+
+      - name: Fetch latest insights from Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: python scripts/fetch_notion.py
+
+      - name: Commit changes if needed
         run: |
-          python scripts/fetch_notion.py
-
-      - name: Commit and push insights.json
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "actions@github.com"
-
-          CURRENT_BRANCH=$(git branch --show-current)
-
-          git pull --rebase origin $CURRENT_BRANCH
-
           git add insights.json
+          git diff --cached --quiet || git commit -m "Update insights from Notion"
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Update insights"
-          git push origin $CURRENT_BRANCH
+      - name: Push changes
+        run: |
+          git push origin HEAD:"${GITHUB_REF_NAME}"
