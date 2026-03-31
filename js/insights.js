@@ -4,13 +4,13 @@ fetch("/insights.json")
   .then((response) => response.json())
   .then((data) => {
     if (!data.results || !Array.isArray(data.results)) {
-      throw new Error("Invalid Notion response format")
+      throw new Error("Invalid insights response format")
     }
 
-    allInsights = data.results.filter((item) => item.properties?.Published?.checkbox === true)
+    allInsights = data.results.filter((item) => item.published === true)
 
-    populateFilter("topicFilter", allInsights, "Topic")
-    populateFilter("focusFilter", allInsights, "Focus")
+    populateFilter("topicFilter", allInsights, "topic")
+    populateFilter("focusFilter", allInsights, "focus")
     renderInsights()
     attachFilterEvents()
   })
@@ -40,8 +40,8 @@ function populateFilter(selectId, items, propertyName) {
   const valueSet = new Set()
 
   items.forEach((item) => {
-    const values = item.properties?.[propertyName]?.multi_select || []
-    values.forEach((value) => valueSet.add(value.name))
+    const values = item[propertyName] || []
+    values.forEach((value) => valueSet.add(value))
   })
 
   Array.from(valueSet)
@@ -63,14 +63,10 @@ function renderInsights() {
   container.innerHTML = ""
 
   const filteredItems = allInsights
-    .filter((item) => matchesMultiSelectFilter(item, "Topic", topicFilter))
-    .filter((item) => matchesMultiSelectFilter(item, "Focus", focusFilter))
+    .filter((item) => matchesArrayFilter(item.topic, topicFilter))
+    .filter((item) => matchesArrayFilter(item.focus, focusFilter))
     .filter((item) => matchesSearch(item, searchQuery))
-    .sort((a, b) => {
-      const dateA = a.properties?.Dato?.date?.start || ""
-      const dateB = b.properties?.Dato?.date?.start || ""
-      return new Date(dateB) - new Date(dateA)
-    })
+    .sort((a, b) => new Date(b.date || "") - new Date(a.date || ""))
 
   if (filteredItems.length === 0) {
     container.innerHTML = `
@@ -82,38 +78,27 @@ function renderInsights() {
   }
 
   filteredItems.forEach((item, index) => {
-    const title = item.properties?.Title?.title?.[0]?.plain_text || "Untitled"
-    const slug = item.properties?.Slug?.rich_text?.[0]?.plain_text || ""
-    const summary = (item.properties?.Summary?.rich_text || [])
-      .map((part) => part.plain_text)
-      .join("")
-    const date = item.properties?.Dato?.date?.start || ""
-    const topic = item.properties?.Topic?.multi_select || []
-    const focus = item.properties?.Focus?.multi_select || []
-    const coverFile = item.properties?.Cover?.files?.[0]
-    const cover = coverFile?.file?.url || coverFile?.external?.url || null
+    const formattedDate = formatRelativeDate(item.date)
 
-    const formattedDate = formatRelativeDate(date)
-
-    const topicHtml = topic.length
-      ? topic.map((item) => `<span class="badge text-bg-light me-2 mb-2">${item.name}</span>`).join("")
+    const topicHtml = item.topic?.length
+      ? item.topic.map((value) => `<span class="badge text-bg-light me-2 mb-2">${value}</span>`).join("")
       : ""
 
-    const focusHtml = focus.length
-      ? focus.map((item) => `<span class="badge text-bg-secondary me-2 mb-2">${item.name}</span>`).join("")
+    const focusHtml = item.focus?.length
+      ? item.focus.map((value) => `<span class="badge text-bg-secondary me-2 mb-2">${value}</span>`).join("")
       : ""
 
     const card = document.createElement("div")
     card.className = "col-12 col-md-6 col-lg-4"
 
     card.innerHTML = `
-      <a href="insight.html?slug=${slug}" class="text-decoration-none">
+      <a href="insight.html?slug=${item.slug}" class="text-decoration-none">
         <div class="card h-100 border-0 shadow-sm">
-          ${cover ? `<img src="${cover}" class="card-img-top image-soft" alt="${title}">` : ""}
+          ${item.cover ? `<img src="${item.cover}" class="card-img-top image-soft" alt="${item.title}">` : ""}
           <div class="card-body">
             ${formattedDate ? `<p class="body-text small mb-2">${formattedDate}</p>` : ""}
-            <h2 class="lead-text mb-3">${title}</h2>
-            ${summary ? `<p class="body-text mb-3">${summary}</p>` : ""}
+            <h2 class="lead-text mb-3">${item.title || "Untitled"}</h2>
+            ${item.summary ? `<p class="body-text mb-3">${item.summary}</p>` : ""}
             ${topicHtml ? `<div class="mb-1">${topicHtml}</div>` : ""}
             ${focusHtml ? `<div>${focusHtml}</div>` : ""}
           </div>
@@ -122,7 +107,6 @@ function renderInsights() {
     `
 
     const link = card.querySelector("a")
-
     if (link) {
       link.setAttribute("data-aos", "fade-up")
       link.setAttribute("data-aos-delay", String(100 + index * 50))
@@ -136,13 +120,12 @@ function renderInsights() {
   }
 }
 
-function matchesMultiSelectFilter(item, propertyName, selectedValue) {
+function matchesArrayFilter(values, selectedValue) {
   if (selectedValue === "all") {
     return true
   }
 
-  const values = item.properties?.[propertyName]?.multi_select || []
-  return values.some((value) => value.name === selectedValue)
+  return (values || []).includes(selectedValue)
 }
 
 function matchesSearch(item, searchQuery) {
@@ -150,12 +133,13 @@ function matchesSearch(item, searchQuery) {
     return true
   }
 
-  const title = item.properties?.Title?.title?.[0]?.plain_text?.toLowerCase() || ""
-  const summary = item.properties?.Summary?.rich_text?.[0]?.plain_text?.toLowerCase() || ""
-  const topic = (item.properties?.Topic?.multi_select || []).map((item) => item.name.toLowerCase()).join(" ")
-  const focus = (item.properties?.Focus?.multi_select || []).map((item) => item.name.toLowerCase()).join(" ")
+  const haystack = `
+    ${item.title || ""}
+    ${item.summary || ""}
+    ${(item.topic || []).join(" ")}
+    ${(item.focus || []).join(" ")}
+  `.toLowerCase()
 
-  const haystack = `${title} ${summary} ${topic} ${focus}`
   return haystack.includes(searchQuery)
 }
 
