@@ -182,6 +182,10 @@ body {
   opacity: 0.8;
 }
 
+[data-bs-theme="dark"] .nav-link.active {
+  color: var(--red);
+}
+
 [data-bs-theme="dark"] .navbar-toggler {
   filter: invert(1);
 }
