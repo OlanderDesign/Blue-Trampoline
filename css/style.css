@@ -1,5 +1,4 @@
-/* INDEX */
-/*
+/* INDEX:
 1. ROOT VARIABLES
 2. BASE / DOCUMENT
 3. LAYOUT SECTIONS
@@ -143,7 +142,6 @@ body {
   opacity: 0.8;
 }
 
-/* ✅ FIXED ACTIVE STATE */
 .navbar .nav-link.active {
   color: var(--red);
 }
