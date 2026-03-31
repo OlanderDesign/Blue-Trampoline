@@ -130,7 +130,11 @@ body {
 
 .nav-link:hover {
   color: var(--dark);
-  opacity: 0.8;
+  opacity: 0.8; 
+}
+
+.nav-link.active {
+  color: var(--red);
 }
 
 .navbar-toggler:focus {
