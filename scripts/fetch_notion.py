@@ -66,6 +66,21 @@ def get_block_children(block_id):
     return results
 
 
+def normalize_date(value):
+    if not value or not isinstance(value, str):
+        return None
+
+    value = value.strip()
+
+    if "/" in value:
+        parts = value.split("/")
+        if len(parts) == 3:
+            year, month, day = parts
+            return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+
+    return value
+
+
 def plain_text_from_rich_text(rich_text):
     if not isinstance(rich_text, list):
         return ""
@@ -287,7 +302,15 @@ def get_date(props, name):
     date_obj = prop.get("date") or {}
     if not isinstance(date_obj, dict):
         return None
-    return date_obj.get("start")
+    return normalize_date(date_obj.get("start"))
+
+
+def get_date_from_candidates(props, *names):
+    for name in names:
+        value = get_date(props, name)
+        if value:
+            return value
+    return None
 
 
 def get_multi_select(props, name):
@@ -330,7 +353,7 @@ def extract_item(page):
     title = get_title(props, "Title")
     slug = get_rich_text(props, "Slug")
     summary = get_rich_text(props, "Summary")
-    date = get_date(props, "Dato")
+    date = get_date_from_candidates(props, "Dato", "Date")
     published = get_checkbox(props, "Published")
     topic = get_multi_select(props, "Topic")
     focus = get_multi_select(props, "Focus")
