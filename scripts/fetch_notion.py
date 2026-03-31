@@ -66,12 +66,21 @@ def get_block_children(block_id):
     return results
 
 
+def plain_text_from_rich_text(rich_text):
+    if not isinstance(rich_text, list):
+        return ""
+    return "".join((part or {}).get("plain_text", "") for part in rich_text)
+
+
 def rich_text_to_html(rich_text):
     parts = []
 
     for item in rich_text or []:
+        if not isinstance(item, dict):
+            continue
+
         text = html.escape(item.get("plain_text", ""))
-        annotations = item.get("annotations", {})
+        annotations = item.get("annotations") or {}
 
         if annotations.get("code"):
             text = f"<code>{text}</code>"
@@ -86,7 +95,10 @@ def rich_text_to_html(rich_text):
 
         href = item.get("href")
         if href:
-            text = f'<a href="{html.escape(href)}" target="_blank" rel="noopener noreferrer">{text}</a>'
+            text = (
+                f'<a href="{html.escape(href)}" target="_blank" '
+                f'rel="noopener noreferrer">{text}</a>'
+            )
 
         parts.append(text)
 
@@ -94,10 +106,13 @@ def rich_text_to_html(rich_text):
 
 
 def youtube_embed(url):
+    if not url:
+        return None
+
     patterns = [
         r"youtube\.com/watch\?v=([^&]+)",
         r"youtu\.be/([^?&]+)",
-        r"youtube\.com/embed/([^?&]+)"
+        r"youtube\.com/embed/([^?&]+)",
     ]
 
     for pattern in patterns:
@@ -123,31 +138,37 @@ def miro_embed(url):
 
 
 def block_to_html(block):
+    if not isinstance(block, dict):
+        return ""
+
     block_type = block.get("type")
-    value = block.get(block_type, {})
+    if not block_type:
+        return ""
+
+    value = block.get(block_type) or {}
 
     if block_type == "paragraph":
-        return f"<p>{rich_text_to_html(value.get('rich_text', []))}</p>"
+        return f"<p>{rich_text_to_html(value.get('rich_text') or [])}</p>"
 
     if block_type == "heading_1":
-        return f"<h1>{rich_text_to_html(value.get('rich_text', []))}</h1>"
+        return f"<h1>{rich_text_to_html(value.get('rich_text') or [])}</h1>"
 
     if block_type == "heading_2":
-        return f"<h2>{rich_text_to_html(value.get('rich_text', []))}</h2>"
+        return f"<h2>{rich_text_to_html(value.get('rich_text') or [])}</h2>"
 
     if block_type == "heading_3":
-        return f"<h3>{rich_text_to_html(value.get('rich_text', []))}</h3>"
+        return f"<h3>{rich_text_to_html(value.get('rich_text') or [])}</h3>"
 
     if block_type == "bulleted_list_item":
-        return f"<li>{rich_text_to_html(value.get('rich_text', []))}</li>"
+        return f"<li>{rich_text_to_html(value.get('rich_text') or [])}</li>"
 
     if block_type == "numbered_list_item":
-        return f"<li>{rich_text_to_html(value.get('rich_text', []))}</li>"
+        return f"<li>{rich_text_to_html(value.get('rich_text') or [])}</li>"
 
     if block_type == "image":
         image_data = value.get("file") or value.get("external") or {}
         url = image_data.get("url", "")
-        caption = rich_text_to_html(value.get("caption", []))
+        caption = rich_text_to_html(value.get("caption") or [])
         if not url:
             return ""
         return f'''
@@ -217,7 +238,10 @@ def blocks_to_html(blocks):
             list_buffer = []
             list_type = None
 
-    for block in blocks:
+    for block in blocks or []:
+        if not isinstance(block, dict):
+            continue
+
         block_type = block.get("type")
 
         if block_type in ["bulleted_list_item", "numbered_list_item"]:
@@ -225,7 +249,9 @@ def blocks_to_html(blocks):
                 flush_list()
 
             list_type = block_type
-            list_buffer.append(block_to_html(block))
+            rendered = block_to_html(block)
+            if rendered:
+                list_buffer.append(rendered)
         else:
             flush_list()
             rendered = block_to_html(block)
@@ -236,31 +262,86 @@ def blocks_to_html(blocks):
     return "\n".join(html_parts)
 
 
-def plain_text_from_rich_text(rich_text):
-    return "".join(part.get("plain_text", "") for part in (rich_text or []))
+def get_property(props, name):
+    value = props.get(name)
+    return value if isinstance(value, dict) else {}
+
+
+def get_title(props, name):
+    prop = get_property(props, name)
+    return plain_text_from_rich_text(prop.get("title") or [])
+
+
+def get_rich_text(props, name):
+    prop = get_property(props, name)
+    return plain_text_from_rich_text(prop.get("rich_text") or [])
+
+
+def get_checkbox(props, name):
+    prop = get_property(props, name)
+    return bool(prop.get("checkbox", False))
+
+
+def get_date(props, name):
+    prop = get_property(props, name)
+    date_obj = prop.get("date") or {}
+    if not isinstance(date_obj, dict):
+        return None
+    return date_obj.get("start")
+
+
+def get_multi_select(props, name):
+    prop = get_property(props, name)
+    values = prop.get("multi_select") or []
+    if not isinstance(values, list):
+        return []
+
+    result = []
+    for item in values:
+        if isinstance(item, dict):
+            name_value = item.get("name")
+            if name_value:
+                result.append(name_value)
+    return result
+
+
+def get_files_first_url(props, name):
+    prop = get_property(props, name)
+    files = prop.get("files") or []
+    if not isinstance(files, list) or not files:
+        return None
+
+    first = files[0] or {}
+    if not isinstance(first, dict):
+        return None
+
+    file_obj = first.get("file") or {}
+    external_obj = first.get("external") or {}
+
+    return file_obj.get("url") or external_obj.get("url")
 
 
 def extract_item(page):
-    props = page.get("properties", {})
+    if not isinstance(page, dict):
+        return {}
 
-    title = plain_text_from_rich_text(props.get("Title", {}).get("title", []))
-    slug = plain_text_from_rich_text(props.get("Slug", {}).get("rich_text", []))
-    summary = plain_text_from_rich_text(props.get("Summary", {}).get("rich_text", []))
-    date = props.get("Dato", {}).get("date", {}).get("start")
-    published = props.get("Published", {}).get("checkbox", False)
-    topic = [x.get("name") for x in props.get("Topic", {}).get("multi_select", [])]
-    focus = [x.get("name") for x in props.get("Focus", {}).get("multi_select", [])]
+    props = page.get("properties") or {}
 
-    cover_files = props.get("Cover", {}).get("files", [])
-    cover = None
-    if cover_files:
-        cover = cover_files[0].get("file", {}).get("url") or cover_files[0].get("external", {}).get("url")
+    title = get_title(props, "Title")
+    slug = get_rich_text(props, "Slug")
+    summary = get_rich_text(props, "Summary")
+    date = get_date(props, "Dato")
+    published = get_checkbox(props, "Published")
+    topic = get_multi_select(props, "Topic")
+    focus = get_multi_select(props, "Focus")
+    cover = get_files_first_url(props, "Cover")
 
-    content_blocks = get_block_children(page["id"])
+    page_id = page.get("id")
+    content_blocks = get_block_children(page_id) if page_id else []
     content_html = blocks_to_html(content_blocks)
 
     return {
-        "id": page["id"],
+        "id": page_id,
         "title": title,
         "slug": slug,
         "summary": summary,
@@ -269,13 +350,13 @@ def extract_item(page):
         "topic": topic,
         "focus": focus,
         "cover": cover,
-        "content_html": content_html
+        "content_html": content_html,
     }
 
 
 def main():
     pages = query_database()
-    items = [extract_item(page) for page in pages]
+    items = [extract_item(page) for page in pages if isinstance(page, dict)]
 
     with open("insights.json", "w", encoding="utf-8") as f:
         json.dump({"results": items}, f, ensure_ascii=False, indent=2)
