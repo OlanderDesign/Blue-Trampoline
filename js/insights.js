@@ -84,7 +84,9 @@ function renderInsights() {
   filteredItems.forEach((item, index) => {
     const title = item.properties?.Title?.title?.[0]?.plain_text || "Untitled"
     const slug = item.properties?.Slug?.rich_text?.[0]?.plain_text || ""
-    const summary = item.properties?.Summary?.rich_text?.[0]?.plain_text || ""
+    const summary = (item.properties?.Summary?.rich_text || [])
+      .map((part) => part.plain_text)
+      .join("")
     const date = item.properties?.Dato?.date?.start || ""
     const topic = item.properties?.Topic?.multi_select || []
     const focus = item.properties?.Focus?.multi_select || []
