@@ -51,15 +51,35 @@
 
   <section class="section">
     <div class="container">
-
+    
       <h1 class="title" data-aos="fade-up">Insights</h1>
 
       <p class="lead-text" data-aos="fade-up" data-aos-delay="100">
         Thoughts, methods, cases and talks from Blue Trampoline.
       </p>
 
-      <div class="row g-4" id="insightsContainer"></div>
+      <div class="row g-3 mb-4" data-aos="fade-up" data-aos-delay="150">
 
+        <div class="col-12">
+          <input id="searchInput" class="form-control" type="search" placeholder="Search insights...">
+        </div>
+
+        <div class="col-12 col-md-6">
+          <select id="topicFilter" class="form-select">
+            <option value="all">All topics</option>
+          </select>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <select id="focusFilter" class="form-select">
+            <option value="all">All focus</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="row g-4" id="insightsContainer"></div>
+    
     </div>
   </section>
 
