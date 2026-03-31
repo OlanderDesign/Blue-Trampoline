@@ -84,6 +84,7 @@ function renderInsights() {
   filteredItems.forEach((item, index) => {
     const title = item.properties?.Title?.title?.[0]?.plain_text || "Untitled"
     const slug = item.properties?.Slug?.rich_text?.[0]?.plain_text || ""
+    const summary = item.properties?.Summary?.rich_text?.[0]?.plain_text || ""
     const date = item.properties?.Dato?.date?.start || ""
     const topic = item.properties?.Topic?.multi_select || []
     const focus = item.properties?.Focus?.multi_select || []
@@ -110,6 +111,7 @@ function renderInsights() {
           <div class="card-body">
             ${formattedDate ? `<p class="body-text small mb-2">${formattedDate}</p>` : ""}
             <h2 class="lead-text mb-3">${title}</h2>
+            ${summary ? `<p class="body-text mb-3">${summary}</p>` : ""}
             ${topicHtml ? `<div class="mb-1">${topicHtml}</div>` : ""}
             ${focusHtml ? `<div>${focusHtml}</div>` : ""}
           </div>
@@ -118,6 +120,7 @@ function renderInsights() {
     `
 
     const link = card.querySelector("a")
+
     if (link) {
       link.setAttribute("data-aos", "fade-up")
       link.setAttribute("data-aos-delay", String(100 + index * 50))
@@ -146,10 +149,11 @@ function matchesSearch(item, searchQuery) {
   }
 
   const title = item.properties?.Title?.title?.[0]?.plain_text?.toLowerCase() || ""
+  const summary = item.properties?.Summary?.rich_text?.[0]?.plain_text?.toLowerCase() || ""
   const topic = (item.properties?.Topic?.multi_select || []).map((item) => item.name.toLowerCase()).join(" ")
   const focus = (item.properties?.Focus?.multi_select || []).map((item) => item.name.toLowerCase()).join(" ")
 
-  const haystack = `${title} ${topic} ${focus}`
+  const haystack = `${title} ${summary} ${topic} ${focus}`
   return haystack.includes(searchQuery)
 }
 
