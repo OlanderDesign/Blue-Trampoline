@@ -133,10 +133,6 @@ body {
   opacity: 0.8; 
 }
 
-.nav-link.active {
-  color: var(--red);
-}
-
 .navbar-toggler:focus {
   box-shadow: none;
 }
@@ -201,6 +197,48 @@ body {
   border-color: rgba(251, 250, 248, 0.5);
 }
 
+.insight-content h1,
+.insight-content h2,
+.insight-content h3 {
+  color: var(--blue);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.insight-content h1 {
+  font-size: 2rem;
+}
+
+.insight-content h2 {
+  font-size: 1.5rem;
+}
+
+.insight-content h3 {
+  font-size: 1.25rem;
+}
+
+.insight-content p,
+.insight-content li {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+.insight-content ul,
+.insight-content ol {
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.insight-content iframe {
+  width: 100%;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.insight-content img {
+  display: block;
+}
+
 @media (max-width: 991.98px) {
   :root {
     --section-space: 4rem;
@@ -221,5 +259,9 @@ body {
 
   .nav-link {
     padding: 0.75rem 0;
+  }
+  
+  .nav-link.active {
+    color: var(--red);
   }
 }
