@@ -1,5 +1,8 @@
 name: Fetch Notion Insights
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "0 * * * *"
