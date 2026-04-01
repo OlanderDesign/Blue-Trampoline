@@ -5,16 +5,11 @@
       "title": "Idea Circle",
       "slug": "idea-circle",
       "summary": "",
-      "date": "2026-03-31",
-      "published": true,
-      "topic": [
-        "iCases"
-      ],
-      "focus": [
-        "Interspace",
-        "Blueprint"
-      ],
-      "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/9fa27099-b43a-493e-9484-f7915ff384ff/IMG_5742.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T3ZJZMGW%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260401T072751Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGTKZZPASGacWfGFeTlnVHJXXwt0Ferr8T41xUoEahR4AiAI9sPJlZz8yB0qjkpIF%2BwUEtgNgRbgXhcvt5schioFDSr%2FAwhQEAAaDDYzNzQyMzE4MzgwNSIMN8bQKiN725RoCUKCKtwDoQb8ijLUyUK9w4nF%2FXmHZPEOLmfaupD1fV2FrDpvd3oj5UFxm8hQ3QIVaIVwhiFHa0SZ%2FWxJnzTKBGLbQxy4%2FEC7rvbZuil5S5tkDgfL8f9zjvxRNwRHG%2FaTLzCSsTnKQxZL2lo9pwDU1dqrCGf9P0PpG7NuDAdoadhyUA3HdXDTNx0olmDBrCPyEZs%2BHOMaea4wrZLc7EJ1iyyeNQT34xAGuGHX5FFrMzebWDdUzLeUK3gbZirim%2B4%2B2w2MgBxSlkitAAe1Ikpw8K5fYKmMvM3%2FhyumtEY9RT3Zc6HmdtFL6q8AO4UqSQgspKOcoNjMI40Eu4BbjAwo4610FWK%2BljYTbV6Jm7jS02zO1r05%2F%2FhaRTuUw9Nq%2FHAyZpJ4d5LBGQBwIqMOJkZ3TuPYgA1l9A3zf%2Ful5X%2FVfTF0Q%2Bcwb%2FnKaFN8cdA5fo%2B18yJqiWZAjKK0XD1JSRnzmdPHFA4xgZyp9DzlfE2p6YRjlcfMmneLbB1UOyh0L%2BDbbdC9%2FCyxWBNVZb0IQDgFVsMZLmflZ24TjeAg112bZ5toGQ95U5R1qKYxzImfjBHlcZTC1eiKKTwalu04NlHNSwHL5WodsPVcix%2Bq3EYcG0YBKX2eDB8ZvkZL%2BKpl7bSUGx8wuIGzzgY6pgG1BqVMzLGklCZUuEdRCt%2FscqjS9bWt5%2FQ0r8Gy7efdojbvgfqz2uqis56MvoKVlj62r7gX4DkkoEHUgvqcFZPOtDKna5o4Gn3n95YKk7fDam4G58mPIyuOAvJyrTEHY4TYiaTX%2B%2F4M1geW5sRikl6GmxC5WuzlTieUBXf512Jp3SUdlq7lVIZGYF%2FCMOcvLBTXsQhq6mebwny2Dry6cODuTQgh%2FiB%2B&X-Amz-Signature=e811a292a352fb4d9fc2a3547e9a1ecb6cd5c9555e15ab868811c93969922713&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "date": null,
+      "published": false,
+      "topic": [],
+      "focus": [],
+      "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/9fa27099-b43a-493e-9484-f7915ff384ff/IMG_5742.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QM6VKGVC%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260401T091211Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB5QBZCfmZhftV9VL%2B%2Bk8dUqCSZNS%2FUZs9TOJd2I%2BB6SAiBOSiSX5VtcLYl72NTReeToUnUuWMtjT6vCgYWxjKk86Sr%2FAwhREAAaDDYzNzQyMzE4MzgwNSIMIHYD%2BTwXWQjsNgKyKtwDYLUxuX%2BqvWhvlChW5MN3BCGxp5RrhVJxIptYAbLcXGBRPKs8iE4OnF6OC2aJcmjXh2aYkBDwhDlKZOrhAHyUO9RtO2SDyMN%2Bmufiz4HvVnrWqE%2BQJsKheoJwdK0TjYzUeE%2BDQZ9xdL%2F89YbwqLekGmNs5g6oWNyte7DEhgqFRskilDtG0J8C1XnUFAliQs7LAPmNrBZ%2B%2BwTR4tPOoyWS0l9SbVaQcgAMHRV2%2BDceuKGcJdSGDQ3ISIp1nkMQmBsWepU7iZ6xJIb6HNW%2FJJrl0J4sYOkckcdjowA%2BUVw45p30oTC64itWnlFqJRaYujyYi3%2BB2YWkRJc8lLVFSvMxQL9QB3OEOBTLtEUk9WYmWFLmMOP8WpdvuNTVaSBnoW%2FB4padBXUWYn6p%2F8r9BqCwMgqA4iuW2lOvvPLg%2F9pIVzdWUBi7%2BSmMVucOk5rh7NCIC9pqdC2A76jQ2dpq0MYfeP9AByBlK17r5n%2F2VoXtSo2z5HMadADpmD7mfQXNM9imwgMnBwURNmaBw%2B%2FQ1Zhra31zG7OZyhhALaz%2BHUvCTH4KjFhMw5esv1sH7JEUohynHpCXlrORSbhCuUAfMFOUOHAT2VoPTXhh%2FHayA%2FYqt0BZpPZZJnHRxtKD%2Bp4w4qKzzgY6pgEkJ2nio8iGpekNwJcdglaC0VmKKMnbaYZS0clpNbfXwbZNHJ%2Fk1ah8ieifLJpDc6Ab%2BJJskf9Uyx0RjOjcP3Wy9ZPwT7csXItBkNlRhVXhBPDPpXdFtlQGnGW2goVSFV6p88aPoGcZBkknLd4GYw5Ubm6Ro1GtNe4QRbKWPj9g9HiUZt7V75qHxl%2BheBrpgG0e6j7l3u7MQHKmHYTuG8hyh9WGGc7I&X-Amz-Signature=79515615a878973bb6418a587e3618d3cf184be1c3f72b9ac66bc765f40129fb&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "content_html": ""
     },
     {
@@ -23,10 +18,8 @@
       "slug": "idea-system",
       "summary": "",
       "date": null,
-      "published": true,
-      "topic": [
-        "Thoughts"
-      ],
+      "published": false,
+      "topic": [],
       "focus": [],
       "cover": null,
       "content_html": "<p></p>"
@@ -36,14 +29,10 @@
       "title": "Idea Score",
       "slug": "idea-score",
       "summary": "",
-      "date": "2026-01-01",
+      "date": null,
       "published": false,
-      "topic": [
-        "Thoughts"
-      ],
-      "focus": [
-        "Pretotype"
-      ],
+      "topic": [],
+      "focus": [],
       "cover": null,
       "content_html": ""
     },
@@ -52,14 +41,10 @@
       "title": "Idea Horizon",
       "slug": "idea-horizon",
       "summary": "",
-      "date": "2026-03-01",
-      "published": true,
-      "topic": [
-        "Methods"
-      ],
-      "focus": [
-        "Interspace"
-      ],
+      "date": null,
+      "published": false,
+      "topic": [],
+      "focus": [],
       "cover": null,
       "content_html": ""
     },
@@ -67,17 +52,35 @@
       "id": "333a473c-0013-809d-8d65-f49f47ee10ee",
       "title": "Idea Card",
       "slug": "idea-card",
-      "summary": "Her er summary",
-      "date": "2026-03-31",
+      "summary": "",
+      "date": "2026-04-01",
       "published": true,
       "topic": [
         "Methods"
       ],
       "focus": [
-        "Ideation"
+        "Ideation",
+        "Workshop"
       ],
-      "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/9e790eea-583d-46b7-ba9f-ddc877481435/IMG_5739.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466T3ZJZMGW%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260401T072751Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGTKZZPASGacWfGFeTlnVHJXXwt0Ferr8T41xUoEahR4AiAI9sPJlZz8yB0qjkpIF%2BwUEtgNgRbgXhcvt5schioFDSr%2FAwhQEAAaDDYzNzQyMzE4MzgwNSIMN8bQKiN725RoCUKCKtwDoQb8ijLUyUK9w4nF%2FXmHZPEOLmfaupD1fV2FrDpvd3oj5UFxm8hQ3QIVaIVwhiFHa0SZ%2FWxJnzTKBGLbQxy4%2FEC7rvbZuil5S5tkDgfL8f9zjvxRNwRHG%2FaTLzCSsTnKQxZL2lo9pwDU1dqrCGf9P0PpG7NuDAdoadhyUA3HdXDTNx0olmDBrCPyEZs%2BHOMaea4wrZLc7EJ1iyyeNQT34xAGuGHX5FFrMzebWDdUzLeUK3gbZirim%2B4%2B2w2MgBxSlkitAAe1Ikpw8K5fYKmMvM3%2FhyumtEY9RT3Zc6HmdtFL6q8AO4UqSQgspKOcoNjMI40Eu4BbjAwo4610FWK%2BljYTbV6Jm7jS02zO1r05%2F%2FhaRTuUw9Nq%2FHAyZpJ4d5LBGQBwIqMOJkZ3TuPYgA1l9A3zf%2Ful5X%2FVfTF0Q%2Bcwb%2FnKaFN8cdA5fo%2B18yJqiWZAjKK0XD1JSRnzmdPHFA4xgZyp9DzlfE2p6YRjlcfMmneLbB1UOyh0L%2BDbbdC9%2FCyxWBNVZb0IQDgFVsMZLmflZ24TjeAg112bZ5toGQ95U5R1qKYxzImfjBHlcZTC1eiKKTwalu04NlHNSwHL5WodsPVcix%2Bq3EYcG0YBKX2eDB8ZvkZL%2BKpl7bSUGx8wuIGzzgY6pgG1BqVMzLGklCZUuEdRCt%2FscqjS9bWt5%2FQ0r8Gy7efdojbvgfqz2uqis56MvoKVlj62r7gX4DkkoEHUgvqcFZPOtDKna5o4Gn3n95YKk7fDam4G58mPIyuOAvJyrTEHY4TYiaTX%2B%2F4M1geW5sRikl6GmxC5WuzlTieUBXf512Jp3SUdlq7lVIZGYF%2FCMOcvLBTXsQhq6mebwny2Dry6cODuTQgh%2FiB%2B&X-Amz-Signature=f99606f664d5a5282f647edd054170508ac363f6e7ca2a9864b4197dbaee649a&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/9e790eea-583d-46b7-ba9f-ddc877481435/IMG_5739.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QM6VKGVC%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260401T091211Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB5QBZCfmZhftV9VL%2B%2Bk8dUqCSZNS%2FUZs9TOJd2I%2BB6SAiBOSiSX5VtcLYl72NTReeToUnUuWMtjT6vCgYWxjKk86Sr%2FAwhREAAaDDYzNzQyMzE4MzgwNSIMIHYD%2BTwXWQjsNgKyKtwDYLUxuX%2BqvWhvlChW5MN3BCGxp5RrhVJxIptYAbLcXGBRPKs8iE4OnF6OC2aJcmjXh2aYkBDwhDlKZOrhAHyUO9RtO2SDyMN%2Bmufiz4HvVnrWqE%2BQJsKheoJwdK0TjYzUeE%2BDQZ9xdL%2F89YbwqLekGmNs5g6oWNyte7DEhgqFRskilDtG0J8C1XnUFAliQs7LAPmNrBZ%2B%2BwTR4tPOoyWS0l9SbVaQcgAMHRV2%2BDceuKGcJdSGDQ3ISIp1nkMQmBsWepU7iZ6xJIb6HNW%2FJJrl0J4sYOkckcdjowA%2BUVw45p30oTC64itWnlFqJRaYujyYi3%2BB2YWkRJc8lLVFSvMxQL9QB3OEOBTLtEUk9WYmWFLmMOP8WpdvuNTVaSBnoW%2FB4padBXUWYn6p%2F8r9BqCwMgqA4iuW2lOvvPLg%2F9pIVzdWUBi7%2BSmMVucOk5rh7NCIC9pqdC2A76jQ2dpq0MYfeP9AByBlK17r5n%2F2VoXtSo2z5HMadADpmD7mfQXNM9imwgMnBwURNmaBw%2B%2FQ1Zhra31zG7OZyhhALaz%2BHUvCTH4KjFhMw5esv1sH7JEUohynHpCXlrORSbhCuUAfMFOUOHAT2VoPTXhh%2FHayA%2FYqt0BZpPZZJnHRxtKD%2Bp4w4qKzzgY6pgEkJ2nio8iGpekNwJcdglaC0VmKKMnbaYZS0clpNbfXwbZNHJ%2Fk1ah8ieifLJpDc6Ab%2BJJskf9Uyx0RjOjcP3Wy9ZPwT7csXItBkNlRhVXhBPDPpXdFtlQGnGW2goVSFV6p88aPoGcZBkknLd4GYw5Ubm6Ro1GtNe4QRbKWPj9g9HiUZt7V75qHxl%2BheBrpgG0e6j7l3u7MQHKmHYTuG8hyh9WGGc7I&X-Amz-Signature=bbe1d191ab5b1ae8d8e3062be9ac860970bdcded5e9cb1c5e910df5638f166a6&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
       "content_html": "<h3>Test</h3>\n<p>Her er lige en start tekst og lad os se om det virker</p>"
+    },
+    {
+      "id": "335a473c-0013-801d-a64e-f4b26b7983cf",
+      "title": "Johari window as Horizons",
+      "slug": "johari-window-horizons",
+      "summary": "",
+      "date": "2026-04-01",
+      "published": true,
+      "topic": [
+        "Thoughts"
+      ],
+      "focus": [
+        "Strategy",
+        "Interspace"
+      ],
+      "cover": "https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/1345d94c-3d2c-4412-950f-8858c1fd5563/peter-thomas-9kQND9wZ1vk-unsplash.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466QM6VKGVC%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260401T091211Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIB5QBZCfmZhftV9VL%2B%2Bk8dUqCSZNS%2FUZs9TOJd2I%2BB6SAiBOSiSX5VtcLYl72NTReeToUnUuWMtjT6vCgYWxjKk86Sr%2FAwhREAAaDDYzNzQyMzE4MzgwNSIMIHYD%2BTwXWQjsNgKyKtwDYLUxuX%2BqvWhvlChW5MN3BCGxp5RrhVJxIptYAbLcXGBRPKs8iE4OnF6OC2aJcmjXh2aYkBDwhDlKZOrhAHyUO9RtO2SDyMN%2Bmufiz4HvVnrWqE%2BQJsKheoJwdK0TjYzUeE%2BDQZ9xdL%2F89YbwqLekGmNs5g6oWNyte7DEhgqFRskilDtG0J8C1XnUFAliQs7LAPmNrBZ%2B%2BwTR4tPOoyWS0l9SbVaQcgAMHRV2%2BDceuKGcJdSGDQ3ISIp1nkMQmBsWepU7iZ6xJIb6HNW%2FJJrl0J4sYOkckcdjowA%2BUVw45p30oTC64itWnlFqJRaYujyYi3%2BB2YWkRJc8lLVFSvMxQL9QB3OEOBTLtEUk9WYmWFLmMOP8WpdvuNTVaSBnoW%2FB4padBXUWYn6p%2F8r9BqCwMgqA4iuW2lOvvPLg%2F9pIVzdWUBi7%2BSmMVucOk5rh7NCIC9pqdC2A76jQ2dpq0MYfeP9AByBlK17r5n%2F2VoXtSo2z5HMadADpmD7mfQXNM9imwgMnBwURNmaBw%2B%2FQ1Zhra31zG7OZyhhALaz%2BHUvCTH4KjFhMw5esv1sH7JEUohynHpCXlrORSbhCuUAfMFOUOHAT2VoPTXhh%2FHayA%2FYqt0BZpPZZJnHRxtKD%2Bp4w4qKzzgY6pgEkJ2nio8iGpekNwJcdglaC0VmKKMnbaYZS0clpNbfXwbZNHJ%2Fk1ah8ieifLJpDc6Ab%2BJJskf9Uyx0RjOjcP3Wy9ZPwT7csXItBkNlRhVXhBPDPpXdFtlQGnGW2goVSFV6p88aPoGcZBkknLd4GYw5Ubm6Ro1GtNe4QRbKWPj9g9HiUZt7V75qHxl%2BheBrpgG0e6j7l3u7MQHKmHYTuG8hyh9WGGc7I&X-Amz-Signature=349aa167661da33f64bd97a08c56a489d082283e5b19f265dd46dd7168a45da0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+      "content_html": "<p></p>\n<p></p>\n<figure class=\"my-4\">\n  <img src=\"https://prod-files-secure.s3.us-west-2.amazonaws.com/9496fef8-38a1-42fe-9c7b-65f55c9ab6c4/5bb0f95f-a290-465f-8fcb-90ee8d6d45e0/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&amp;X-Amz-Credential=ASIAZI2LB466ZW4N4N22%2F20260401%2Fus-west-2%2Fs3%2Faws4_request&amp;X-Amz-Date=20260401T091216Z&amp;X-Amz-Expires=3600&amp;X-Amz-Security-Token=IQoJb3JpZ2luX2VjEIj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCbf4nO3nEXmIM%2FBuJ9FIrxTv9TnZ2V%2Bn0zGmLs33bKiAIhAOpaTTqkedJ9NgczHNHUm8h4yUFEMu6baHYyOd%2B6T00fKv8DCFEQABoMNjM3NDIzMTgzODA1IgwBrfF2dJN%2FmRf6NcAq3ANElJt0P7dljwtU9ydWGMHteLH8U409%2FwLGuOqwwRRppdO7XS%2B6UzSEkIU86Qhj35JkpmCziK7SvWfhSZzPCuZvYflwUvgI6Df6u01zlbw02Oh4SO%2BPYBdYryi40%2BeawVQ3AS%2Fz6hKDp%2FLnu2NOpUexuGYENaPIjOiZP9nO8Fda9yxfQg8oGvzeop4g9%2BF6CoLJIenQyvI4nTsVpWh485zmhNercA6WbVjwXcC4WcDZyr0vi4JWvrNmjdBlEdeQsXYKha9yDhMcPW71tW94PbrCTk3YJ3aW4nZgE3Q5ZhAf0zgmT8i3rtc%2BalDZFWDj7SkJs3Q444EXPt1boOVN6Uc6JB5YHP0V6tU1UYc6O7za2e612GqAyJd6mjINEqyv3ejM3DXA6NltBSVKQah1nRfveDAvX0kHK9Qak8yyuNL7PtBRiHAdtVewvEC0QLnLDWlNoQa9%2BSxUssLE7PMDaz5m8OSScXiJnqm3jApitx003ozPIpupONvtb74SfVMzT81sYVYBDZoswx4Ugqgd9jIxItr2mx67eLS4lcNH%2BINnAXIq5tSUvnR203rNh%2FvE6AZ8D0M6wJP730IJvmRlOyNnrbZDzmIBqwl6aFsKO9KXFp641mMbsFDI3BiQkzDIpLPOBjqkAaGhgNTwLopSiXZRPnPnx5tCalrAw17yN9QnsDq9rbBl%2FgsbatIYO19FyRSa0Rgapdu2cp6nkQTXmd9BQPVIY66YMG46%2FL2yu0IfW4LmZms1AoVfxSOuNOfNs6sm11neTR8qTfPPI5mnznTnlb%2B40AS37pYsLpeAefZeZ5a03o6LumwT%2B%2FGxPNOMRlMxCeIEv5p2O8PduW6%2F7aRJxKx7A0i8Tw2z&amp;X-Amz-Signature=09cf5dc888f91c6c6fe9d82ea56de0fac28ea015c4aadabb42cadc9d28b2e3b2&amp;X-Amz-SignedHeaders=host&amp;x-amz-checksum-mode=ENABLED&amp;x-id=GetObject\" class=\"img-fluid rounded-4 w-100\" alt=\"\">\n  \n</figure>\n<p></p>"
     }
   ]
 }
