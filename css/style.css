@@ -155,7 +155,7 @@ body {
 .insight-content h1,
 .insight-content h2,
 .insight-content h3 {
-  color: var(--blue);
+  color: inherit;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -334,6 +334,7 @@ body {
   :root {
     --section-space: 4rem;
   }
+} 
 
 @media (min-width: 992px) and (orientation: landscape),
        (min-width: 1024px) {
