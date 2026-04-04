@@ -2,12 +2,14 @@ import html
 import json
 import os
 import re
+import shutil
 import urllib.parse
 import urllib.request
 
 NOTION_TOKEN = os.environ["NOTION_TOKEN"]
 DATABASE_ID = os.environ["NOTION_DATABASE_ID"]
 NOTION_VERSION = "2022-06-28"
+SITE_URL = "https://bluetrampoline.com"
 
 
 def notion_request(url, method="GET", payload=None):
@@ -377,12 +379,202 @@ def extract_item(page):
     }
 
 
+def format_human_date(date_string):
+    if not date_string:
+        return ""
+
+    try:
+        year, month, day = date_string.split("-")
+        month_names = [
+            "",
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ]
+        return f"{int(day)} {month_names[int(month)]} {year}"
+    except Exception:
+        return date_string
+
+
+def build_article_html(item):
+    title = html.escape(item.get("title") or "Untitled")
+    summary = html.escape(item.get("summary") or "Blue Trampoline insight.")
+    cover = item.get("cover") or f"{SITE_URL}/assets/favicon.jpeg"
+    article_url = f"{SITE_URL}/insights/{item['slug']}/"
+    date_text = format_human_date(item.get("date"))
+    date_html = f'<p class="body-text small mb-2">{html.escape(date_text)}</p>' if date_text else ""
+
+    topic_html = ""
+    if item.get("topic"):
+        topic_html = "".join(
+            f'<span class="badge text-bg-light me-2 mb-2">{html.escape(value)}</span>'
+            for value in item["topic"]
+        )
+
+    focus_html = ""
+    if item.get("focus"):
+        focus_html = "".join(
+            f'<span class="badge text-bg-secondary me-2 mb-2">{html.escape(value)}</span>'
+            for value in item["focus"]
+        )
+
+    cover_html = ""
+    if item.get("cover"):
+        cover_html = f'''
+        <div class="mb-4">
+          <img src="{html.escape(item["cover"])}" class="image-soft w-100" alt="{title}">
+        </div>
+        '''
+
+    return f"""<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{title} – Blue Trampoline</title>
+  <meta name="description" content="{summary}">
+
+  <meta property="og:title" content="{title} – Blue Trampoline">
+  <meta property="og:description" content="{summary}">
+  <meta property="og:image" content="{html.escape(cover)}">
+  <meta property="og:url" content="{html.escape(article_url)}">
+  <meta property="og:type" content="article">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{title} – Blue Trampoline">
+  <meta name="twitter:description" content="{summary}">
+  <meta name="twitter:image" content="{html.escape(cover)}">
+
+  <link rel="icon" type="image/png" href="/assets/favicon.jpeg">
+  <link rel="icon" type="image/svg+xml" href="/assets/Icon1.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top navbar-blur">
+  <div class="container">
+
+    <a class="navbar-brand brand" href="/">
+      <img src="/assets/Icon2.svg" alt="Blue Trampoline" class="nav-logo">
+      BLUE TRAMPOLINE
+    </a>
+
+    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/value/">Value</a></li>
+        <li class="nav-item"><a class="nav-link active" href="/insights/">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="/partners/">Partners</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+      </ul>
+    </div>
+
+    <button id="themeToggle" class="btn btn-sm btn-outline-secondary rounded-pill ms-lg-3" aria-label="Toggle theme">
+      <i class="bi bi-moon-stars-fill"></i>
+    </button>
+
+  </div>
+</nav>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-10">
+
+          <p class="body-text mb-4">
+            <a href="/insights/" class="link-brand">← Back to insights</a>
+          </p>
+
+          {cover_html}
+
+          {date_html}
+
+          <h1 class="title mb-3">{title}</h1>
+
+          {f'<p class="body-text mb-4">{summary}</p>' if item.get("summary") else ""}
+
+          {f'<div class="mb-1">{topic_html}</div>' if topic_html else ""}
+
+          {f'<div class="mb-4">{focus_html}</div>' if focus_html else ""}
+
+          <div class="insight-content">
+            {item.get("content_html") or "<p class='body-text'>No content yet.</p>"}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="/js/theme.js"></script>
+<script>
+  if (typeof AOS !== "undefined") {{
+    AOS.init({{ duration: 700, once: true }});
+  }}
+</script>
+</body>
+</html>
+"""
+
+
+def clear_generated_insight_pages(base_dir="insights"):
+    os.makedirs(base_dir, exist_ok=True)
+
+    for name in os.listdir(base_dir):
+        path = os.path.join(base_dir, name)
+        if os.path.isdir(path):
+            shutil.rmtree(path)
+
+
+def write_article_pages(items):
+    clear_generated_insight_pages("insights")
+
+    for item in items:
+        if not item.get("published"):
+            continue
+
+        slug = item.get("slug")
+        if not slug:
+            continue
+
+        folder = os.path.join("insights", slug)
+        os.makedirs(folder, exist_ok=True)
+
+        with open(os.path.join(folder, "index.html"), "w", encoding="utf-8") as f:
+            f.write(build_article_html(item))
+
+
 def main():
     pages = query_database()
     items = [extract_item(page) for page in pages if isinstance(page, dict)]
 
     with open("insights.json", "w", encoding="utf-8") as f:
         json.dump({"results": items}, f, ensure_ascii=False, indent=2)
+
+    write_article_pages(items)
 
 
 if __name__ == "__main__":

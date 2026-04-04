@@ -92,7 +92,7 @@ function renderInsights() {
     card.className = "col-12 col-md-6 col-lg-4"
 
     card.innerHTML = `
-      <a href="insight.html?slug=${item.slug}" class="text-decoration-none">
+      <a href="/insights/${item.slug}/" class="text-decoration-none">
         <div class="card h-100 border-0 shadow-sm">
           ${item.cover ? `<img src="${item.cover}" class="card-img-top image-soft" alt="${item.title}">` : ""}
           <div class="card-body">
