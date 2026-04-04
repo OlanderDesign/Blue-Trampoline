@@ -43,7 +43,7 @@ jobs:
 
       - name: Commit changes if needed
         run: |
-          git add insights.json
+          git add insights.json insights
           git diff --cached --quiet || git commit -m "Update insights from Notion"
 
       - name: Push changes
