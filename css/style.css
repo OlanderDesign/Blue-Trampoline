@@ -330,18 +330,11 @@ body {
 
 
 /* 10. RESPONSIVE */
+
 @media (max-width: 991.98px) {
   :root {
     --section-space: 4rem;
   }
-} 
-
-@media (min-width: 992px) and (orientation: landscape),
-       (min-width: 1024px) {
-  .editorial-flow {
-    column-count: 2;
-  }
-}
 
   body {
     padding-top: 4.5rem;
@@ -361,11 +354,18 @@ body {
   }
 }
 
+@media (min-width: 992px) and (orientation: landscape),
+       (min-width: 1024px) {
+  .editorial-flow {
+    column-count: 2;
+  }
+}
+
 /* 11. FOOTER */
 
 .footer-clean {
   margin-top: var(--section-space);
-  padding: 2rem 0;
+  padding: 3rem 0 2rem;
   text-align: center;
 
   background: rgba(251, 250, 248, 0.88);
