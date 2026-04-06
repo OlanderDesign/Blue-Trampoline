@@ -360,3 +360,67 @@ body {
     padding: 0.75rem 0;
   }
 }
+
+/* 11. FOOTER */
+
+.footer-clean {
+  margin-top: var(--section-space);
+  padding: 2rem 0;
+  text-align: center;
+
+  background: rgba(251, 250, 248, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-top: 1px solid rgba(46, 49, 53, 0.08);
+}
+
+/* Line structure */
+.footer-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Base text (reuse body feel) */
+.footer-line span {
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+/* Links (email + linkedin) */
+.footer-clean a {
+  color: var(--red);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-clean a:hover {
+  opacity: 0.7;
+}
+
+/* Icon inherits red color */
+.footer-icon {
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Contact line slightly stronger */
+.footer-contact {
+  font-weight: 500;
+}
+
+/* Dark mode (reuse navbar logic) */
+[data-bs-theme="dark"] .footer-clean {
+  background: rgba(46, 49, 53, 0.88);
+  border-top: 1px solid rgba(251, 250, 248, 0.1);
+}
+
+[data-bs-theme="dark"] .footer-line span {
+  color: var(--white);
+}
