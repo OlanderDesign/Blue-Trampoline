@@ -26,7 +26,7 @@
 
 /* 2. BASE / DOCUMENT */
 body {
-  padding-top: 5rem;
+  padding-top: 0;
   font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--white);
   color: var(--dark);
@@ -49,6 +49,14 @@ body {
   min-height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
+}
+
+.hero-image {
+  height: 100vh;
+  background-image: url("../assets/blue-trampoline-hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .logo {
