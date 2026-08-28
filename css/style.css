@@ -113,10 +113,26 @@ body {
 
 /* 6. NAVIGATION */
 .navbar-blur {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* Navbar after hero image */
+.navbar-blur.navbar-scrolled {
   background: rgba(251, 250, 248, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(46, 49, 53, 0.08);
+}
+
+.navbar-blur:not(.navbar-scrolled) .brand,
+.navbar-blur:not(.navbar-scrolled) .nav-link {
+  color: var(--white);
+}
+
+.navbar-blur:not(.navbar-scrolled) .navbar-toggler {
+  filter: invert(1);
 }
 
 .nav-logo {

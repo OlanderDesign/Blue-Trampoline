@@ -26,3 +26,19 @@ toggle.addEventListener("click", () => {
   const nextTheme = currentTheme === "dark" ? "light" : "dark";
   setTheme(nextTheme);
 });
+
+const navbar = document.querySelector('.navbar-blur');
+const hero = document.querySelector('.hero-image');
+
+function updateNavbar() {
+  if (!navbar || !hero) return;
+
+  if (window.scrollY >= hero.offsetHeight - navbar.offsetHeight) {
+    navbar.classList.add('navbar-scrolled');
+  } else {
+    navbar.classList.remove('navbar-scrolled');
+  }
+}
+
+window.addEventListener('scroll', updateNavbar);
+window.addEventListener('load', updateNavbar);
