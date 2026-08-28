@@ -351,6 +351,13 @@ body {
   .hero {
     min-height: auto;
   }
+  
+  .hero-image {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background-size: contain;
+  background-position: center;
+  }
 
   .navbar-collapse {
     padding-top: 1rem;
