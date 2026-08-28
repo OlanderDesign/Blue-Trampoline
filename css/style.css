@@ -52,7 +52,8 @@ body {
 }
 
 .hero-image {
-  height: 100vh;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background-image: url("../assets/blue-trampoline-hero.png");
   background-size: cover;
   background-position: center;
@@ -369,10 +370,9 @@ body {
   }
   
   .hero-image {
-  height: auto;
-  aspect-ratio: 16 / 9;
-  background-size: contain;
-  background-position: center;
+  aspect-ratio: 4 / 5;
+  background-size: cover;
+  background-position: 65% center;
   }
 
   .navbar-collapse {
