@@ -33,7 +33,9 @@ const hero = document.querySelector('.hero-image');
 function updateNavbar() {
   if (!navbar || !hero) return;
 
-  if (window.scrollY >= hero.offsetHeight - navbar.offsetHeight) {
+  const heroBottom = hero.getBoundingClientRect().bottom;
+
+  if (heroBottom <= navbar.offsetHeight) {
     navbar.classList.add('navbar-scrolled');
   } else {
     navbar.classList.remove('navbar-scrolled');
