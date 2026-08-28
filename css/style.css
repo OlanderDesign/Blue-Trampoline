@@ -370,9 +370,9 @@ body {
   }
   
   .hero-image {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   background-size: cover;
-  background-position: 65% center;
+  background-position: 80% center;
   }
 
   .navbar-collapse {
