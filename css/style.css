@@ -387,55 +387,25 @@ body {
 }
 
 
-/* 10. RESPONSIVE */
-@media (max-width: 991.98px) {
-  :root { --section-space: 4rem; }
-  body { padding-top: 0; }
-  .hero { min-height: auto; }
+/* 11. FOOTER */
+.site-footer { background: var(--blue); color: var(--white); padding: 3rem 0 1.25rem; }
 
-  .hero-image { aspect-ratio: 1 / 1; background-image: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.68) 40%, rgba(0,0,0,0.58) 70%, rgba(0,0,0,0.48) 100%), url("../assets/blue-trampoline-hero.png"); background-size: cover; background-position: 90% center; }
+.footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
 
-  .focus-points { padding: 0; }
-  .focus-grid { display: block; }
-  .focus-item { flex-direction: row; text-align: left; padding: 1rem; border-right: 0; border-bottom: 1px solid var(--light-grey); }
-  .focus-icon { flex: 0 0 56px; margin: 0 1rem 0 0; }
-  .focus-text { flex: 1; }
-  .focus-text h2 { margin-bottom: .35rem; }
-  .focus-text h2::after { margin: .3rem 0 0; }
-  .focus-text p { font-size: .9rem; }
+.footer-cta h2 { font-family: "Segoe UI Black"; font-size: 1.35rem; line-height: 1.1; margin: 0 0 1rem; }
 
-  .navbar-collapse { padding-top: 1rem; padding-bottom: .5rem; }
-  .nav-link { padding: .75rem 0; }
-
-  .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
-  .footer-cta h2 { font-size: 1.25rem; line-height: 1.1; max-width: 18rem; }
-
-  .footer-contact-block { align-items: flex-start; }
-  .footer-meta { font-size: .7rem; flex-wrap: wrap; text-align: center; background: var(--blue); color: var(--white); }
-}
-
-
-/* Footer */
-.site-footer { background: var(--blue); color: var(--white); padding: 3rem 0 1.5rem; }
-.footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding-bottom: 2rem; }
-.footer-cta h2 { font-family: "Segoe UI Black"; font-size: 1.35rem; line-height: 1.1; margin-bottom: 1rem; }
 .footer-cta p { font-family: "Segoe UI Semilight"; margin: 0; }
-.footer-contact-block { display: flex; flex-direction: column; align-items: flex-start; gap: .8rem; }
-.footer-contact-block a, .footer-contact-block span { color: var(--white); text-decoration: none; }
-.footer-button { background: var(--red); padding: .8rem 1.8rem; border-radius: 999px; }
-.footer-meta { border-top: 1px solid rgba(255,255,255,.2); margin-top: 2rem; padding-top: 1rem; display: flex; justify-content: center; gap: .6rem; font-size: .75rem; color: var(--white); background: var(--blue); }
 
+.footer-contact-block { display: flex; justify-content: flex-end; }
 
-/* Line structure */
-.footer-line {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
+.footer-button { display: inline-block; background: var(--red); color: var(--white); padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; }
 
-  font-size: 0.95rem;
-  margin-bottom: 0.5rem;
-}
+.footer-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 2.5rem; font-size: .75rem; color: var(--white); }
+
+.footer-linkedin { display: inline-flex; align-items: center; gap: .35rem; color: var(--white); text-decoration: none; }
+
+.footer-linkedin i { color: var(--red); font-size: 1rem; }
+
 
 /* Base text (reuse body feel) */
 .footer-line span {
@@ -475,3 +445,29 @@ body {
 [data-bs-theme="dark"] .footer-line span {
   color: var(--white);
 }
+
+/* 10. RESPONSIVE */
+@media (max-width: 991.98px) {
+  :root { --section-space: 4rem; }
+  body { padding-top: 0; }
+  .hero { min-height: auto; }
+
+  .hero-image { aspect-ratio: 1 / 1; background-image: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.68) 40%, rgba(0,0,0,0.58) 70%, rgba(0,0,0,0.48) 100%), url("../assets/blue-trampoline-hero.png"); background-size: cover; background-position: 90% center; }
+
+  .focus-points { padding: 0; }
+  .focus-grid { display: block; }
+  .focus-item { flex-direction: row; text-align: left; padding: 1rem; border-right: 0; border-bottom: 1px solid var(--light-grey); }
+  .focus-icon { flex: 0 0 56px; margin: 0 1rem 0 0; }
+  .focus-text { flex: 1; }
+  .focus-text h2 { margin-bottom: .35rem; }
+  .focus-text h2::after { margin: .3rem 0 0; }
+  .focus-text p { font-size: .9rem; }
+
+  .navbar-collapse { padding-top: 1rem; padding-bottom: .5rem; }
+  .nav-link { padding: .75rem 0; }
+
+  .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-cta h2 { font-size: 1.15rem; max-width: 18rem; }
+  .footer-contact-block { justify-content: flex-start; }
+  .footer-meta { margin-top: 2rem; font-size: .7rem; justify-content: flex-start; }
+} 
