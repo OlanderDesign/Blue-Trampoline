@@ -10,6 +10,8 @@
 9. RESPONSIVE
 */
 
+  @font-face { font-family: "Segoe UI Black"; src: url("../assets/fonts/segoe-ui-black.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+  @font-face { font-family: "Segoe UI Semilight"; src: url("../assets/fonts/segoe-ui-semilight.ttf") format("truetype"); font-weight: 300; font-style: normal; }
 
 /* 1. ROOT VARIABLES */
 :root {
@@ -21,8 +23,6 @@
   --light-grey: #F2F2F2;
   --radius: 1rem;
   --section-space: 5rem;
-  @font-face { font-family: "Segoe UI Black"; src: url("../assets/fonts/segoe-ui-black.ttf") format("truetype"); font-weight: 900; font-style: normal; }
-  @font-face { font-family: "Segoe UI Semilight"; src: url("../assets/fonts/segoe-ui-semilight.ttf") format("truetype"); font-weight: 300; font-style: normal; }
 }
 
 
@@ -67,8 +67,8 @@ body {
 
 .hero-copy { color: var(--white); padding-top: 5rem; }
 .hero-copy { color: var(--white); }
-.hero-copy h1 { font-family: "Segoe UI Black", sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; max-width: 700px; margin-bottom: 1.5rem; }
-.hero-copy p { font-family: "Segoe UI Semilight", sans-serif; font-size: 1.2rem; line-height: 1.5; max-width: 520px; margin-bottom: 2rem; }
+font-family: "Segoe UI Black";
+font-family: "Segoe UI Semilight";
 .hero-button { display: inline-block; background: var(--red); color: var(--white); padding: 0.8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight", sans-serif; }
 
 .logo {
