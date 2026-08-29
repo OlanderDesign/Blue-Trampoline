@@ -463,7 +463,7 @@ body {
   .nav-link { padding: .75rem 0; }
 
   .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
-  .footer-cta h2 { font-size: 1.15rem; max-width: 18rem; }
+  .footer-cta h2 { font-size: 1.25rem; max-width: 18rem; }
   .footer-contact-block { justify-content: flex-start; }
   .footer-meta { font-size: .7rem; text-align: center; }
 } 
