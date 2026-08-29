@@ -429,8 +429,9 @@ body {
 }
 
   .footer-main { grid-template-columns: 1fr; gap: 2rem; }
-  .footer-contact-block { border-left: 0; padding-left: 0; }
-  .footer-bottom { align-items: flex-end; }
+  .footer-cta h2 { font-size: 2rem; line-height: 1.05; }
+  .footer-contact-block { border-left: 0; padding-left: 0; align-items: flex-start; }
+  .footer-button { align-self: flex-start; }
 
 @media (min-width: 992px) and (orientation: landscape),
        (min-width: 1024px) {
