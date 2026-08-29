@@ -68,10 +68,10 @@ body {
   align-items: center;
 }
 
-.hero-copy { color: var(--white); padding-top: 2.5rem; }
+.hero-copy { color: var(--white); padding-top: 3rem; }
 .hero-copy h1 { font-family: "Segoe UI Black"; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; max-width: 700px; margin-bottom: 1.5rem; }
 .hero-copy p { font-family: "Segoe UI Semilight"; font-size: 1.2rem; line-height: 1.5; max-width: 520px; margin-bottom: 2rem; }
-.hero-button { display: inline-block; background: var(--red); color: var(--white); padding: 0.8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; margin-bottom: 2.5rem; float: right; }
+.hero-button { display: inline-block; background: var(--red); color: var(--white); padding: 0.8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; margin-bottom: 2rem; float: right; }
 
 .logo {
   width: 72px;
