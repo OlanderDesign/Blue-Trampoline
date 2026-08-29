@@ -21,13 +21,15 @@
   --light-grey: #F2F2F2;
   --radius: 1rem;
   --section-space: 5rem;
+  @font-face { font-family: "Segoe UI Black"; src: url("../assets/fonts/segoe-ui-black.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+  @font-face { font-family: "Segoe UI Semilight"; src: url("../assets/fonts/segoe-ui-semilight.ttf") format("truetype"); font-weight: 300; font-style: normal; }
 }
 
 
 /* 2. BASE / DOCUMENT */
 body {
   padding-top: 0;
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family: "Segoe UI Semilight", "Segoe UI", system-ui, sans-serif;
   background: var(--white);
   color: var(--dark);
   transition: background-color 0.3s ease, color 0.3s ease;
