@@ -316,6 +316,13 @@ body {
   border-radius: var(--radius);
 }
 
+.insights-preview { padding: 3rem 0; background: var(--white); }
+.insights-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.insights-header h2 { font-family: "Segoe UI Black"; font-size: 1rem; color: var(--red); margin: 0; }
+.insights-header a { color: var(--red); text-decoration: none; font-family: "Segoe UI Semilight"; }
+.insights-carousel { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.insights-carousel::-webkit-scrollbar { display: none; }
+.insight-card { flex: 0 0 calc((100% - 3rem) / 3); scroll-snap-align: start; }
 
 /* 9. DARK MODE OVERRIDES */
 [data-bs-theme="dark"] .title {
@@ -461,6 +468,9 @@ body {
 
   .navbar-collapse { padding-top: 1rem; padding-bottom: .5rem; }
   .nav-link { padding: .75rem 0; }
+  
+  .insight-card { flex: 0 0 82%; }
+  .insights-carousel { gap: 1rem; }
 
   .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-cta h2 { font-size: 1.75rem; max-width: 20rem; }
