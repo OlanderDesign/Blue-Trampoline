@@ -44,3 +44,24 @@ function updateNavbar() {
 
 window.addEventListener('scroll', updateNavbar);
 window.addEventListener('load', updateNavbar);
+
+const insightsCarousel = document.getElementById("insightsCarousel");
+
+if (insightsCarousel) {
+  fetch("/insights.json")
+    .then(response => response.json())
+    .then(insights => {
+      insightsCarousel.innerHTML = insights
+        .slice(0, 6)
+        .map(insight => `
+          <a class="insight-card" href="/insights/${insight.slug}/">
+            <img src="${insight.cover}" alt="">
+            <div class="insight-card-content">
+              <h3>${insight.title}</h3>
+              <p>${insight.summary || ""}</p>
+            </div>
+          </a>
+        `)
+        .join("");
+    });
+}
