@@ -25,6 +25,9 @@
   --section-space: 5rem;
 }
 
+.red { color: var(--red); }
+.blue { color: var(--blue); }
+.yellow { color: var(--yellow); }
 
 /* 2. BASE / DOCUMENT */
 body {
