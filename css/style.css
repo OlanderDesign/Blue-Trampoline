@@ -473,7 +473,7 @@ body {
   .insights-carousel { gap: 1rem; }
 
   .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
-  .footer-cta h2 { font-size: 1.5rem; max-width: 20rem; }
+  .footer-cta h2 { font-size: 1.5rem; }
   .footer-contact-block { justify-content: flex-start; }
   .footer-meta { font-size: .7rem; text-align: center; }
 } 
