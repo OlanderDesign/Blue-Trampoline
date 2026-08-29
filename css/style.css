@@ -81,7 +81,6 @@ body {
 .focus-text h2 { font-family: "Segoe UI Black"; font-size: 1rem; color: var(--blue); margin-bottom: .75rem; }
 .focus-text h2::after { content: ""; display: block; width: 28px; height: 2px; background: var(--red); margin: .5rem auto 0; }
 .focus-text p { font-family: "Segoe UI Semilight"; margin: 0; max-width: 260px; }
-.focus-arrow { display: none; }
 
 .logo {
   width: 72px;
@@ -418,7 +417,6 @@ body {
   .focus-text h2 { margin-bottom: .35rem; }
   .focus-text h2::after { margin: .3rem 0 0; }
   .focus-text p { font-size: .9rem; }
-  .focus-arrow { display: block; margin-left: 1rem; }
 
   .navbar-collapse {
     padding-top: 1rem;
