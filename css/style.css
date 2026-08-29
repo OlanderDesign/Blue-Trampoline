@@ -353,6 +353,16 @@ body {
   border-color: rgba(251, 250, 248, 0.5);
 }
 
+/* Hero navbar always uses light styling */
+.navbar-blur:not(.navbar-scrolled) .brand,
+.navbar-blur:not(.navbar-scrolled) .nav-link {
+  color: var(--white);
+}
+
+.navbar-blur:not(.navbar-scrolled) .btn-outline-secondary {
+  color: var(--white);
+  border-color: rgba(251, 250, 248, 0.35);
+}
 
 /* 10. RESPONSIVE */
 
