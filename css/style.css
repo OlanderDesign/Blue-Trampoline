@@ -54,7 +54,7 @@ body {
 .hero-image {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background-image: linear-gradient(90deg, rgba(10,16,22,0.88) 0%, rgba(10,16,22,0.72) 24%, rgba(10,16,22,0.45) 38%, rgba(10,16,22,0.20) 52%, rgba(10,16,22,0.06) 66%, rgba(10,16,22,0) 78%), url("../assets/blue-trampoline-hero.png");
+  background-image: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.58) 24%, rgba(0,0,0,0.34) 38%, rgba(0,0,0,0.16) 52%, rgba(0,0,0,0.04) 66%, rgba(0,0,0,0) 78%), url("../assets/blue-trampoline-hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
