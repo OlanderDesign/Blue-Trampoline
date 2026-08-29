@@ -400,11 +400,7 @@ body {
 
 .footer-button { display: inline-block; background: var(--red); color: var(--white); padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; }
 
-.footer-meta { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 2.5rem; font-size: .75rem; color: var(--white); }
-
-.footer-linkedin { display: inline-flex; align-items: center; gap: .35rem; color: var(--white); text-decoration: none; }
-
-.footer-linkedin i { color: var(--red); font-size: 1rem; }
+.footer-meta { margin-top: 2rem; font-size: .75rem; color: var(--white); }
 
 
 /* Base text (reuse body feel) */
@@ -469,5 +465,5 @@ body {
   .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
   .footer-cta h2 { font-size: 1.15rem; max-width: 18rem; }
   .footer-contact-block { justify-content: flex-start; }
-  .footer-meta { margin-top: 2rem; font-size: .7rem; justify-content: flex-start; }
+  .footer-meta { font-size: .7rem; text-align: center; }
 } 
