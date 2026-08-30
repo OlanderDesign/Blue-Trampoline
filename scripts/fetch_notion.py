@@ -406,6 +406,8 @@ def format_human_date(date_string):
 
 
 def build_article_html(item):
+    with open("insights/footer.html", "r", encoding="utf-8") as f:
+        footer_html = f.read()
     title = html.escape(item.get("title") or "Untitled")
     summary = html.escape(item.get("summary") or "Blue Trampoline insight.")
     cover = item.get("cover") or f"{SITE_URL}/assets/favicon.jpeg"
@@ -470,7 +472,7 @@ def build_article_html(item):
   <div class="container">
 
     <a class="navbar-brand brand" href="/">
-      <img src="/assets/Icon2.svg" alt="Blue Trampoline" class="nav-logo">
+      <img src="/assets/Icon1.svg" alt="Blue Trampoline" class="nav-logo">
       BLUE TRAMPOLINE
     </a>
 
@@ -526,6 +528,8 @@ def build_article_html(item):
     </div>
   </section>
 </main>
+
+{footer_html}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
