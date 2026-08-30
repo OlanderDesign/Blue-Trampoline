@@ -31,11 +31,9 @@ const navbar = document.querySelector('.navbar-blur');
 const hero = document.querySelector('.hero-image');
 
 function updateNavbar() {
-  if (!navbar || !hero) return;
+  if (!navbar) return;
 
-  const heroBottom = hero.getBoundingClientRect().bottom;
-
-  if (heroBottom <= navbar.offsetHeight) {
+  if (window.scrollY > 20) {
     navbar.classList.add('navbar-scrolled');
   } else {
     navbar.classList.remove('navbar-scrolled');
