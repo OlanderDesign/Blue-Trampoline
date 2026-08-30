@@ -98,8 +98,8 @@ body {
 
 /* 4. TYPOGRAPHY */
 .title {
+  font-family: "Segoe UI Black";
   font-size: clamp(3rem, 9vw, 6rem);
-  font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.04em;
   color: var(--blue);
@@ -241,6 +241,10 @@ body {
 
 .insight-content img {
   display: block;
+}
+
+#insightsContainer h2 {
+  font-family: "Segoe UI Black", sans-serif;
 }
 
 /* 8. EDITORIAL LAYOUT */
