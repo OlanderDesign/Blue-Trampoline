@@ -18,34 +18,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-blur">
-  <div class="container">
-
-    <a class="navbar-brand brand" href="/">
-      <img src="/assets/Icon1.svg" alt="Blue Trampoline" class="nav-logo">
-      BLUE TRAMPOLINE
-    </a>
-
-    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/value/">Value</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/insights/">Insights</a></li>
-        <li class="nav-item"><a class="nav-link" href="/partners/">Partners</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-      </ul>
-    </div>
-
-    <button id="themeToggle" class="btn btn-sm btn-outline-secondary rounded-pill ms-lg-3" aria-label="Toggle theme">
-      <i class="bi bi-moon-stars-fill"></i>
-    </button>
-
-  </div>
-</nav>
+<div id="navbar"></div>
 
 <main>
   <section class="section">
@@ -83,6 +56,13 @@
   </section>
 </main>
 
+<script>
+  fetch("/insights/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script src="/js/theme.js"></script>
