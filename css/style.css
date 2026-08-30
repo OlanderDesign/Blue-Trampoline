@@ -197,6 +197,30 @@ body {
   box-shadow: none;
 }
 
+/* INSIGHTS NAVBAR */
+
+.insight-navbar { --insight-nav-color: var(--white); background-color: var(--blue); border-bottom: 1px solid transparent; padding: .75rem 0; transition: background-color .35s ease, border-color .35s ease, box-shadow .35s ease; }
+
+.insight-navbar.navbar-scrolled, [data-bs-theme="dark"] .insight-navbar.navbar-scrolled { --insight-nav-color: var(--blue); background-color: rgba(251,250,248,.96); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom-color: rgba(46,49,53,.08); box-shadow: 0 4px 18px rgba(46,49,53,.06); }
+
+.insight-navbar .brand, .insight-navbar .nav-link { color: var(--insight-nav-color) !important; transition: color .35s ease, opacity .2s ease; }
+
+.insight-navbar .nav-link:hover { color: var(--red) !important; }
+
+.insight-navbar .nav-link.active { color: var(--insight-nav-color) !important; }
+
+.insight-logo-frame { display: grid; place-items: center; width: 42px; height: 42px; flex: 0 0 42px; overflow: hidden; background: var(--blue); }
+
+.insight-navbar .insight-logo { width: 100%; height: 100%; max-width: none; object-fit: contain; transform: scale(2.45) translate(-15%,15%); transition: transform .45s cubic-bezier(.22,1,.36,1); }
+
+.insight-navbar.navbar-scrolled .insight-logo { transform: scale(1) translate(0,0); }
+
+.insight-navbar .navbar-toggler { color: var(--insight-nav-color); filter: none !important; }
+
+.insight-navbar .navbar-toggler-icon { width: 1.5rem; height: 1.15rem; background-image: linear-gradient(currentColor,currentColor), linear-gradient(currentColor,currentColor), linear-gradient(currentColor,currentColor); background-size: 100% 2px; background-position: center top, center center, center bottom; background-repeat: no-repeat; }
+
+.insight-navbar #themeToggle { color: var(--insight-nav-color); border-color: currentColor; }
+
 
 /* 7. INSIGHT / ARTICLE CONTENT */
 .insight-content h1,
