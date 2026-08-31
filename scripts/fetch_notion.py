@@ -406,6 +406,9 @@ def format_human_date(date_string):
 
 
 def build_article_html(item):
+    with open("insights/navbar.html", "r", encoding="utf-8") as f:
+        navbar_html = f.read()
+
     with open("insights/footer.html", "r", encoding="utf-8") as f:
         footer_html = f.read()
     title = html.escape(item.get("title") or "Untitled")
@@ -463,39 +466,12 @@ def build_article_html(item):
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="/css/style.css?v=5">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg fixed-top navbar-blur">
-  <div class="container">
-
-    <a class="navbar-brand brand" href="/">
-      <img src="/assets/Icon1.svg" alt="Blue Trampoline" class="nav-logo">
-      BLUE TRAMPOLINE
-    </a>
-
-    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/value/">Value</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/insights/">Insights</a></li>
-        <li class="nav-item"><a class="nav-link" href="/partners/">Partners</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-      </ul>
-    </div>
-
-    <button id="themeToggle" class="btn btn-sm btn-outline-secondary rounded-pill ms-lg-3" aria-label="Toggle theme">
-      <i class="bi bi-moon-stars-fill"></i>
-    </button>
-
-  </div>
-</nav>
+{navbar_html}
 
 <main>
   <section class="section">
