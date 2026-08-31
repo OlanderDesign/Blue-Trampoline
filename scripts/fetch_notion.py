@@ -409,7 +409,7 @@ def build_article_html(item):
     with open("insights/navbar.html", "r", encoding="utf-8") as f:
         navbar_html = f.read()
 
-    with open("insights/footer.html", "r", encoding="utf-8") as f:
+    with open("footer.html", "r", encoding="utf-8") as f:
         footer_html = f.read()
     title = html.escape(item.get("title") or "Untitled")
     summary = html.escape(item.get("summary") or "Blue Trampoline insight.")
@@ -509,7 +509,7 @@ def build_article_html(item):
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="/js/theme.js"></script>
+<script src="/js/insights.js"></script>
 <script>
   if (typeof AOS !== "undefined") {{
     AOS.init({{ duration: 700, once: true }});
