@@ -195,20 +195,10 @@ body {
 /* INSIGHTS NAVBAR */
 
 .insight-navbar {
-  --insight-nav-color: var(--white);
-  background-color: var(--blue);
+  --insight-nav-color: rgb(251,250,248);
+  background-color: rgb(22,58,95);
   border-bottom: 1px solid transparent;
   padding: .5rem 0;
-  transition: background-color .35s ease, border-color .35s ease, box-shadow .35s ease;
-}
-
-.insight-navbar.navbar-scrolled {
-  --insight-nav-color: var(--blue);
-  background-color: rgba(251,250,248,.96);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom-color: rgba(46,49,53,.08);
-  box-shadow: 0 4px 18px rgba(46,49,53,.06);
 }
 
 .insight-navbar .brand,
@@ -241,11 +231,6 @@ body {
   max-width: none;
   object-fit: contain;
   transform: scale(2.45) translate(-15%,15%);
-  transition: transform .45s cubic-bezier(.22,1,.36,1);
-}
-
-.insight-navbar.navbar-scrolled .insight-logo {
-  transform: scale(1) translate(0,0);
 }
 
 .insight-navbar .navbar-toggler {
