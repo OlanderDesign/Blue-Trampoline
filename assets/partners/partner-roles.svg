@@ -1,0 +1,196 @@
+<svg xmlns=“http://www.w3.org/2000/svg”
+     viewBox=“0 0 1000 1000”
+     role=“img”
+     aria-labelledby=“title desc”>
+
+  <title id=“title”>Partner roles</title>
+  <desc id=“desc”>
+    Kunde, partner og leverandør som skiftende roller omkring den samme opgave.
+  </desc>
+
+  <defs>
+    <marker id=“arrowBlue”
+            markerWidth=“10”
+            markerHeight=“10”
+            refX=“8”
+            refY=“5”
+            orient=“auto”
+            markerUnits=“strokeWidth”>
+      <path d=“M0,0 L10,5 L0,10 z” fill=“#163A5F”/>
+    </marker>
+  </defs>
+
+  <!— ROLE CYCLE —>
+  <path d=“M 690 235
+           C 850 300, 900 420, 850 565”
+        fill=“none”
+        stroke=“#163A5F”
+        stroke-width=“3”
+        stroke-linecap=“round”
+        stroke-dasharray=“8 12”
+        marker-end=“url(#arrowBlue)”/>
+
+  <path d=“M 760 735
+           C 630 850, 430 850, 305 750”
+        fill=“none”
+        stroke=“#163A5F”
+        stroke-width=“3”
+        stroke-linecap=“round”
+        stroke-dasharray=“8 12”
+        marker-end=“url(#arrowBlue)”/>
+
+  <path d=“M 150 565
+           C 100 420, 155 295, 305 235”
+        fill=“none”
+        stroke=“#163A5F”
+        stroke-width=“3”
+        stroke-linecap=“round”
+        stroke-dasharray=“8 12”
+        marker-end=“url(#arrowBlue)”/>
+
+  <!— KUNDE —>
+  <circle cx=“500” cy=“205” r=“155” fill=“#163A5F”/>
+
+  <g fill=“none”
+     stroke=“#FBFAF8”
+     stroke-width=“10”
+     stroke-linecap=“round”
+     stroke-linejoin=“round”>
+    <circle cx=“500” cy=“130” r=“31”/>
+    <circle cx=“440” cy=“155” r=“23”/>
+    <circle cx=“560” cy=“155” r=“23”/>
+
+    <path d=“M455 240
+             C455 196 471 178 500 178
+             C529 178 545 196 545 240
+             Z”/>
+
+    <path d=“M390 230
+             C390 194 406 180 430 180
+             C446 180 458 186 466 198”/>
+
+    <path d=“M610 230
+             C610 194 594 180 570 180
+             C554 180 542 186 534 198”/>
+  </g>
+
+  <text x=“500”
+        y=“315”
+        text-anchor=“middle”
+        font-family=“Segoe UI, Arial, sans-serif”
+        font-size=“42”
+        font-weight=“700”
+        letter-spacing=“1”
+        fill=“#FBFAF8”>
+    KUNDE
+  </text>
+
+  <!— PARTNER —>
+  <circle cx=“230” cy=“720” r=“155” fill=“#FF5A5F”/>
+
+  <g fill=“none”
+     stroke=“#FBFAF8”
+     stroke-width=“11”
+     stroke-linecap=“round”
+     stroke-linejoin=“round”>
+
+    <path d=“M130 675 L180 625 L230 657”/>
+    <path d=“M330 675 L280 625 L238 653”/>
+
+    <path d=“M165 705 L216 752
+             C226 762 242 762 252 752
+             L294 712”/>
+
+    <path d=“M198 741 L184 756
+             C176 765 176 777 185 784
+             C194 792 206 790 214 782
+             L225 770”/>
+
+    <path d=“M225 770 L214 784
+             C206 793 207 806 216 813
+             C225 821 238 819 246 810
+             L257 797”/>
+
+    <path d=“M257 797 L249 808
+             C243 817 245 828 253 834
+             C262 840 273 838 279 830
+             L287 820”/>
+
+    <path d=“M214 661 L242 638
+             C251 631 263 631 272 638
+             L294 655”/>
+  </g>
+
+  <text x=“230”
+        y=“830”
+        text-anchor=“middle”
+        font-family=“Segoe UI, Arial, sans-serif”
+        font-size=“42”
+        font-weight=“700”
+        letter-spacing=“1”
+        fill=“#FBFAF8”>
+    PARTNER
+  </text>
+
+  <!— LEVERANDØR —>
+  <circle cx=“770” cy=“720” r=“155” fill=“#BFC3C9”/>
+
+  <g fill=“none”
+     stroke=“#FBFAF8”
+     stroke-width=“10”
+     stroke-linejoin=“round”>
+
+    <path d=“M770 625 L835 662 L770 700 L705 662 Z”/>
+    <path d=“M705 662 L705 737 L770 775 L770 700”/>
+    <path d=“M835 662 L835 737 L770 775”/>
+  </g>
+
+  <text x=“770”
+        y=“830”
+        text-anchor=“middle”
+        font-family=“Segoe UI, Arial, sans-serif”
+        font-size=“36”
+        font-weight=“700”
+        letter-spacing=“.5”
+        fill=“#FBFAF8”>
+    LEVERANDØR
+  </text>
+
+  <!— CENTER MESSAGE —>
+  <text x=“500”
+        y=“490”
+        text-anchor=“middle”
+        font-family=“Segoe UI, Arial, sans-serif”
+        fill=“#163A5F”>
+
+    <tspan x=“500”
+           dy=“0”
+           font-size=“30”
+           font-weight=“600”>
+      Den samme
+    </tspan>
+
+    <tspan x=“500”
+           dy=“42”
+           font-size=“30”
+           font-weight=“600”>
+      virksomhed kan have
+    </tspan>
+
+    <tspan x=“500”
+           dy=“42”
+           font-size=“30”
+           font-weight=“600”>
+      forskellige roller i
+    </tspan>
+
+    <tspan x=“500”
+           dy=“42”
+           font-size=“30”
+           font-weight=“600”>
+      forskellige opgaver.
+    </tspan>
+
+  </text>
+
+</svg>
