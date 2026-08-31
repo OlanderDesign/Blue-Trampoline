@@ -5,173 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Blue Trampoline – Partners</title>
-  <meta name="description" content="Blue Trampoline helps technically driven businesses turn uncertainty into focused action and new business opportunities.">
+  <meta
+    name="description"
+    content="Blue Trampoline works with trusted partners to bring the right capabilities into development when they are needed."
+  >
 
+  <link rel="icon" type="image/png" href="/assets/favicon.jpeg">
   <link rel="icon" type="image/svg+xml" href="/assets/Icon1.svg">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <link rel="stylesheet" href="/css/style.css?v=3">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-blur">
-  <div class="container">
+<div id="navbar"></div>
 
-    <a class="navbar-brand brand" href="/">
-    <img src="/assets/Icon2.svg" alt="Blue Trampoline" class="nav-logo">
-    BLUE TRAMPOLINE</a>
-
-    <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
-
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/value/">Value</a></li>
-        <li class="nav-item"><a class="nav-link" href="/insights/">Insights</a></li>
-        <li class="nav-item"><a class="nav-link active" href="/partners/">Partners</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
-
-      </ul>
-    </div> 
-  </div>
-</nav>
-
-<!-- MAIN -->
 <main>
-
   <section class="section">
     <div class="container">
 
       <h1 class="title">Partners</h1>
 
       <p class="lead-text">
-        Many companies are introduced to solutions before they have defined what they are trying to solve. This often leads to misalignment, unnecessary complexity, or premature investment.
+        TBA
       </p>
-
-      <p class="body-text">
-        Blue Trampoline works differently.
-      </p>
-
-      <p class="body-text">
-        We acts as the link between:
-      </p>
-
-      <ul class="body-text">
-        <li>business need</li>
-        <li>development opportunity</li>
-        <li>and external capability</li>
-      </ul>
-
-      <p class="body-text">
-        The focus is on defining the opportunity first, so that any capability introduced has a clear role.
-      </p>
-
-      <p class="body-text">
-        Partners bring:
-      </p>
-
-      <ul class="body-text">
-        <li>technical depth</li>
-        <li>implementation capability</li>
-        <li>tools for building, testing, and visualising</li>
-      </ul>
-
-      <p class="body-text">
-        This may include:
-      </p>
-
-      <ul class="body-text">
-        <li>software development</li>
-        <li>extended reality</li>
-        <li>robotics</li>
-        <li>visualisation and communication</li>
-        <li>domain-specific expertise</li>
-      </ul>
-
-      <p class="body-text">
-        Partners are involved when they add clarity.
-      </p>
-
-      <p class="body-text">
-        This may be:
-      </p>
-
-      <ul class="body-text">
-        <li>early, to visualise an idea</li>
-        <li>mid-process, to define feasibility or cost</li>
-        <li>later, to support development and implementation</li>
-      </ul>
-
-      <p class="body-text">
-        The timing depends on what the opportunity requires, not on a fixed model.
-      </p>
-
-      <p class="body-text">
-        Without partners, it is difficult to:
-      </p>
-
-      <ul class="body-text">
-        <li>estimate real cost</li>
-        <li>test feasibility</li>
-        <li>understand what is technically possible</li>
-      </ul>
-
-      <p class="body-text">
-        With partners involved at the right time:
-      </p>
-
-      <ul class="body-text">
-        <li>opportunities become more concrete</li>
-        <li>decisions become more informed</li>
-        <li>development becomes more realistic</li>
-      </ul>
-
-      <p class="body-text">
-        Blue Trampoline remains responsible for:
-      </p>
-
-      <ul class="body-text">
-        <li>the structure and the direction</li>
-        <li>the connection between business and capability</li>
-        <li>the collaboration and relationships</li>
-      </ul>
 
     </div>
   </section>
-
 </main>
 
-<!-- SCRIPTS -->
+<div id="footer"></div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="/js/theme.js"></script>
-<script>if(location.pathname==="/index.html"){location.replace("/partners")}</script>
+<script src="/js/partners.js"></script>
 
-<footer class="footer-clean">
-  <div class="container">
+<script>
+  fetch("/partners/navbar.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("navbar").innerHTML = html;
+      window.initPartnerNavbar();
+    });
+</script>
 
-    <div class="footer-line">
-      <span>© 2026 Blue Trampoline · CVR 38284037</span>
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-icon" aria-label="LinkedIn" class="link-brand">
-        <i class="bi bi-linkedin"></i>
-      </a>
-    </div>
-
-    <div class="footer-line">
-      <a href="mailto:hello@bluetrampoline.com" class="footer-contact" class="link-brand">
-        👋 Contact us
-      </a>
-    </div>
-
-  </div>
-</footer>
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+</script>
 
 </body>
 </html>

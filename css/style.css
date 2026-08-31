@@ -1,19 +1,43 @@
-/* INDEX:
-1. ROOT VARIABLES
-2. BASE / DOCUMENT
-3. LAYOUT SECTIONS
-4. TYPOGRAPHY
-5. LINKS
-6. NAVIGATION
-7. INSIGHT / ARTICLE CONTENT
-8. DARK MODE OVERRIDES
-9. RESPONSIVE
-*/
+/* =========================================================
+   BLUE TRAMPOLINE
 
-  @font-face { font-family: "Segoe UI Black"; src: url("../assets/fonts/segoe-ui-black.ttf") format("truetype"); font-weight: 900; font-style: normal; }
-  @font-face { font-family: "Segoe UI Semilight"; src: url("../assets/fonts/segoe-ui-semilight.ttf") format("truetype"); font-weight: 300; font-style: normal; }
+   INDEX:
+   1. FONTS & VARIABLES
+   2. BASE
+   3. TYPOGRAPHY & LINKS
+   4. NAVIGATION
+      - Home
+      - Insights
+      - Partners
+   5. HOME SECTIONS
+      - Hero
+      - Focus points
+      - About
+      - Insights preview
+   6. INSIGHTS / ARTICLE CONTENT
+   7. FOOTER
+   8. RESPONSIVE
+========================================================= */
 
-/* 1. ROOT VARIABLES */
+
+/* =========================================================
+   1. FONTS & VARIABLES
+========================================================= */
+
+@font-face {
+  font-family: "Segoe UI Black";
+  src: url("../assets/fonts/segoe-ui-black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Semilight";
+  src: url("../assets/fonts/segoe-ui-semilight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
 :root {
   --blue: #163A5F;
   --red: #FF5A5F;
@@ -21,66 +45,29 @@
   --dark: #2E3135;
   --white: #FBFAF8;
   --light-grey: #F2F2F2;
+
   --radius: 1rem;
   --section-space: 5rem;
 }
 
-.red { color: var(--red); }
-.blue { color: var(--blue); }
-.yellow { color: var(--yellow); }
+.red {
+  color: var(--red);
+}
 
-/* 2. BASE / DOCUMENT */
+
+/* =========================================================
+   2. BASE
+========================================================= */
+
 body {
   padding-top: 0;
   font-family: "Segoe UI Semilight", "Segoe UI", system-ui, sans-serif;
   background: var(--white);
   color: var(--dark);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
-/* 3. LAYOUT SECTIONS */
-.hero,
 .section {
   padding: var(--section-space) 0;
-}
-
-.hero {
-  min-height: calc(100vh - 5rem);
-  display: flex;
-  align-items: center;
-}
-
-.hero-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-image: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.58) 24%, rgba(0,0,0,0.34) 38%, rgba(0,0,0,0.16) 52%, rgba(0,0,0,0.04) 66%, rgba(0,0,0,0) 78%), url("../assets/blue-trampoline-hero.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.hero-copy { color: var(--white); padding-top: 3.5rem; }
-.hero-copy h1 { font-family: "Segoe UI Black"; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; max-width: 700px; margin-bottom: 1.5rem; }
-.hero-copy p { font-family: "Segoe UI Semilight"; font-size: 1.2rem; line-height: 1.5; max-width: 520px; margin-bottom: 2rem; }
-.hero-button { display: inline-block; background: var(--red); color: var(--white); padding: 0.8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; margin-bottom: 1.25rem; float: right; }
-
-.focus-points { padding: 2rem 0; background: var(--white); }
-.focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
-.focus-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.5rem 2rem; border-right: 1px solid var(--light-grey); }
-.focus-item:last-child { border-right: 0; }
-.focus-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin-bottom: 1rem; }
-.focus-text h2 { font-family: "Segoe UI Black"; font-size: 1rem; color: var(--blue); margin-bottom: .75rem; }
-.focus-text h2::after { content: ""; display: block; width: 28px; height: 2px; background: var(--red); margin: .5rem auto 0; }
-.focus-text p { font-family: "Segoe UI Semilight"; margin: 0; max-width: 260px; }
-
-.logo {
-  width: 72px;
-  height: auto;
-  display: block;
 }
 
 .image-soft {
@@ -91,12 +78,15 @@ body {
 }
 
 
-/* 4. TYPOGRAPHY */
+/* =========================================================
+   3. TYPOGRAPHY & LINKS
+========================================================= */
+
 .title {
-  font-family: "Segoe UI Black";
+  font-family: "Segoe UI Black", sans-serif;
   font-size: clamp(3rem, 9vw, 6rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  line-height: .95;
+  letter-spacing: -.04em;
   color: var(--blue);
   margin-bottom: 1.5rem;
 }
@@ -116,72 +106,66 @@ body {
   max-width: 42rem;
 }
 
-
-/* 5. LINKS */
 .link-brand {
   color: var(--red);
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: opacity .2s ease;
 }
 
 .link-brand:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 
-/* 6. NAVIGATION */
+/* =========================================================
+   4. NAVIGATION
+========================================================= */
+
+
+/* ---------- Home navbar ---------- */
+
 .navbar-blur {
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition: background .3s ease, border-color .3s ease;
 }
 
-/* Navbar after hero image */
 .navbar-blur.navbar-scrolled {
-  background: rgba(251, 250, 248, 0.88);
+  background: rgba(251, 250, 248, .88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(46, 49, 53, 0.08);
-}
-
-.navbar-blur:not(.navbar-scrolled) .brand,
-.navbar-blur:not(.navbar-scrolled) .nav-link {
-  color: var(--white);
-}
-
-.navbar-blur:not(.navbar-scrolled) .navbar-toggler {
-  filter: invert(1);
+  border-bottom-color: rgba(46, 49, 53, .08);
 }
 
 .nav-logo {
-  height: 32px;
   width: auto;
+  height: 32px;
   object-fit: contain;
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   color: var(--blue);
   font-size: 1rem;
   font-weight: 400;
+  letter-spacing: .05em;
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  letter-spacing: 0.05em;
 }
 
 .brand:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .nav-link {
-  color: var(--dark);
+  color: var(--blue);
   font-weight: 500;
-  transition: opacity 0.2s ease;
+  transition: opacity .2s ease;
 }
 
 .nav-link:hover {
-  opacity: 0.8;
+  opacity: .8;
 }
 
 .navbar .nav-link.active {
@@ -192,11 +176,23 @@ body {
   box-shadow: none;
 }
 
-/* INSIGHTS NAVBAR */
+/* Home navbar over hero */
+
+.navbar-blur:not(.navbar-scrolled) .brand,
+.navbar-blur:not(.navbar-scrolled) .nav-link {
+  color: var(--white);
+}
+
+.navbar-blur:not(.navbar-scrolled) .navbar-toggler {
+  filter: invert(1);
+}
+
+
+/* ---------- Insights navbar ---------- */
 
 .insight-navbar {
-  --insight-nav-color: rgb(251,250,248);
-  background-color: rgb(22,58,95);
+  --insight-nav-color: rgb(251, 250, 248);
+  background-color: rgb(22, 58, 95);
   border-bottom: 1px solid transparent;
   padding: .5rem 0;
 }
@@ -204,7 +200,6 @@ body {
 .insight-navbar .brand,
 .insight-navbar .nav-link {
   color: var(--insight-nav-color) !important;
-  transition: color .35s ease, opacity .2s ease;
 }
 
 .insight-navbar .nav-link:hover {
@@ -230,7 +225,7 @@ body {
   height: 32px;
   max-width: none;
   object-fit: contain;
-  transform: scale(2.45) translate(-15%,15%);
+  transform: scale(2.45) translate(-15%, 15%);
 }
 
 .insight-navbar .navbar-toggler {
@@ -242,16 +237,328 @@ body {
   width: 1.5rem;
   height: 1.15rem;
   background-image:
-    linear-gradient(currentColor,currentColor),
-    linear-gradient(currentColor,currentColor),
-    linear-gradient(currentColor,currentColor);
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
   background-size: 100% 2px;
-  background-position: center top, center center, center bottom;
+  background-position:
+    center top,
+    center center,
+    center bottom;
   background-repeat: no-repeat;
 }
 
 
-/* 7. INSIGHT / ARTICLE CONTENT */
+/* ---------- Partners navbar ---------- */
+
+.partner-navbar {
+  --partner-nav-color: var(--white);
+  background-color: var(--red);
+  border-bottom: 1px solid transparent;
+  padding: .5rem 0;
+}
+
+.partner-navbar .brand,
+.partner-navbar .nav-link {
+  color: var(--partner-nav-color) !important;
+}
+
+.partner-navbar .brand:hover,
+.partner-navbar .nav-link:hover {
+  color: var(--partner-nav-color) !important;
+  opacity: .8;
+}
+
+.partner-navbar .nav-link.active {
+  color: var(--partner-nav-color) !important;
+}
+
+.partner-logo-frame {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  overflow: hidden;
+  background: var(--red);
+}
+
+.partner-navbar .partner-logo {
+  width: 32px;
+  height: 32px;
+  max-width: none;
+  object-fit: contain;
+  transform: scale(2.45) translate(-15%, 15%);
+}
+
+.partner-navbar .navbar-toggler {
+  color: var(--partner-nav-color);
+  filter: none !important;
+}
+
+.partner-navbar .navbar-toggler-icon {
+  width: 1.5rem;
+  height: 1.15rem;
+  background-image:
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor),
+    linear-gradient(currentColor, currentColor);
+  background-size: 100% 2px;
+  background-position:
+    center top,
+    center center,
+    center bottom;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   5. HOME SECTIONS
+========================================================= */
+
+
+/* ---------- Hero ---------- */
+
+.hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, .78) 0%,
+      rgba(0, 0, 0, .58) 24%,
+      rgba(0, 0, 0, .34) 38%,
+      rgba(0, 0, 0, .16) 52%,
+      rgba(0, 0, 0, .04) 66%,
+      rgba(0, 0, 0, 0) 78%
+    ),
+    url("../assets/blue-trampoline-hero.png");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-copy {
+  color: var(--white);
+  padding-top: 3.5rem;
+}
+
+.hero-copy h1 {
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-copy p {
+  font-family: "Segoe UI Semilight", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  display: inline-block;
+  float: right;
+  background: var(--red);
+  color: var(--white);
+  padding: .8rem 1.6rem;
+  margin-bottom: 1.25rem;
+  border-radius: 999px;
+  font-family: "Segoe UI Semilight", sans-serif;
+  text-decoration: none;
+}
+
+
+/* ---------- Focus points ---------- */
+
+.focus-points {
+  padding: 2rem 0;
+  background: var(--white);
+}
+
+.focus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.focus-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  border-right: 1px solid var(--light-grey);
+}
+
+.focus-item:last-child {
+  border-right: 0;
+}
+
+.focus-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.focus-text h2 {
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1rem;
+  color: var(--blue);
+  margin-bottom: .75rem;
+}
+
+.focus-text h2::after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: .5rem auto 0;
+  background: var(--red);
+}
+
+.focus-text p {
+  max-width: 260px;
+  margin: 0;
+}
+
+
+/* ---------- About ---------- */
+
+.about-section {
+  background: var(--white);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.about-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.about-copy h2 {
+  font-family: "Segoe UI Black", sans-serif;
+  color: var(--blue);
+  font-size: 2rem;
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+
+.about-copy p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+
+/* ---------- Insights preview ---------- */
+
+.insights-preview {
+  padding: 3rem 0;
+  background: var(--white);
+}
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.insights-header h2 {
+  margin: 0;
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1rem;
+  color: var(--red);
+}
+
+.insights-header a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.insights-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.insights-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.insight-card {
+  flex: 0 0 calc((100% - 3rem) / 3);
+  scroll-snap-align: start;
+  color: var(--dark);
+  text-decoration: none;
+  background: var(--white);
+}
+
+.insight-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.insight-card-content {
+  padding: 1rem 0;
+}
+
+.insight-card h3 {
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1.2rem;
+  color: var(--blue);
+  margin-bottom: .5rem;
+}
+
+.insight-card p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+  color: var(--dark);
+}
+
+
+/* =========================================================
+   6. INSIGHTS / ARTICLE CONTENT
+========================================================= */
+
+#insightsContainer h2 {
+  font-family: "Segoe UI Black", sans-serif;
+}
+
 .insight-content h1,
 .insight-content h2,
 .insight-content h3 {
@@ -289,202 +596,204 @@ body {
 .insight-content iframe {
   width: 100%;
   border: 0;
-  border-radius: 1rem;
+  border-radius: var(--radius);
 }
 
 .insight-content img {
   display: block;
 }
 
-#insightsContainer h2 {
-  font-family: "Segoe UI Black", sans-serif;
-}
 
-/* 8. EDITORIAL LAYOUT */
+/* =========================================================
+   7. FOOTER
+========================================================= */
 
-/* Container for editorial sections */
-.editorial {
-  max-width: 100%;
-}
-
-/* Main flowing text layout */
-.editorial-flow {
-  column-count: 1;
-  column-gap: 2.5rem;
-}
-
-/* Prevent awkward breaks inside elements */
-.editorial-flow > * {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
-}
-
-/* Paragraph styling (magazine feel) */
-.editorial-flow p,
-.editorial-flow li {
-  text-align: justify;
-  text-justify: inter-word;
-  hyphens: auto;
-}
-
-/* Headings inside flow */
-.editorial-flow h1,
-.editorial-flow h2,
-.editorial-flow h3,
-.editorial-flow h4,
-.editorial-flow h5,
-.editorial-flow h6 {
-  break-after: avoid;
-  margin-top: 0;
-}
-
-/* Inline media (inside flow) */
-.editorial-media {
-  margin: 0 0 1.5rem;
-}
-
-.editorial-media img,
-.editorial-media video,
-.editorial-media iframe {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-}
-
-.editorial-media figcaption {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* Full-width media (breaks columns) */
-.editorial-full {
-  column-span: all;
-  -webkit-column-span: all;
-  margin: 0 0 2rem;
-}
-
-.editorial-full img,
-.editorial-full video,
-.editorial-full iframe {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
-}
-
-.about-section { background: var(--white); }
-.about-container { display: grid; grid-template-columns: 1fr 1fr; padding-top: 0; padding-bottom: 0; }
-.about-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.about-copy { display: flex; flex-direction: column; justify-content: center; padding: 3rem; }
-.about-copy h2 { font-family: "Segoe UI Black"; color: var(--blue); font-size: 2rem; line-height: 1.05; margin-bottom: 1rem; }
-.about-copy p { font-family: "Segoe UI Semilight"; font-size: 1rem; line-height: 1.5; margin-bottom: 1rem; }
-
-.insights-preview { padding: 3rem 0; background: var(--white); }
-.insights-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-.insights-header h2 { font-family: "Segoe UI Black"; font-size: 1rem; color: var(--red); margin: 0; }
-.insights-header a { color: var(--red); text-decoration: none; font-family: "Segoe UI Semilight"; }
-.insights-carousel { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-.insights-carousel::-webkit-scrollbar { display: none; }
-.insight-card { flex: 0 0 calc((100% - 3rem) / 3); scroll-snap-align: start; }
-
-.insight-card { color: var(--dark); text-decoration: none; background: var(--white); }
-.insight-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
-.insight-card-content { padding: 1rem 0; }
-.insight-card h3 { font-family: "Segoe UI Black"; font-size: 1.2rem; color: var(--blue); margin-bottom: .5rem; }
-.insight-card p { font-family: "Segoe UI Semilight"; font-size: .95rem; line-height: 1.5; color: var(--dark); margin: 0; }
-
-
-/* Hero navbar always uses light styling */
-.navbar-blur:not(.navbar-scrolled) .brand,
-.navbar-blur:not(.navbar-scrolled) .nav-link {
+.site-footer {
+  background: var(--blue);
   color: var(--white);
+  padding: 3rem 0 1.25rem;
 }
 
-.navbar-blur:not(.navbar-scrolled) .btn-outline-secondary {
-  color: var(--white);
-  border-color: rgba(251, 250, 248, 0.35);
-}
-
-
-/* 11. FOOTER */
-.site-footer { background: var(--blue); color: var(--white); padding: 3rem 0 1.25rem; }
-
-.footer-main { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
-
-.footer-cta h2 { font-family: "Segoe UI Black"; font-size: 1.35rem; line-height: 1.1; margin: 0 0 1rem; }
-
-.footer-cta p { font-family: "Segoe UI Semilight"; margin: 0; }
-
-.footer-contact-block { display: flex; justify-content: flex-end; }
-
-.footer-button { display: inline-block; background: var(--red); color: var(--white); padding: .8rem 1.6rem; border-radius: 999px; text-decoration: none; font-family: "Segoe UI Semilight"; }
-
-.footer-meta { margin-top: 2rem; font-size: .75rem; color: var(--white); }
-
-
-/* Base text (reuse body feel) */
-.footer-line span {
-  color: var(--dark);
-  opacity: 0.8;
-}
-
-/* Links (email + linkedin) */
-.footer-clean a {
-  color: var(--red);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-.footer-clean a:hover {
-  opacity: 0.7;
-}
-
-/* Icon inherits red color */
-.footer-icon {
-  font-size: 1.1rem;
-  display: inline-flex;
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
 }
 
-/* Contact line slightly stronger */
-.footer-contact {
-  font-weight: 500;
+.footer-cta h2 {
+  font-family: "Segoe UI Black", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.1;
+  margin: 0 0 1rem;
 }
 
-/* 10. RESPONSIVE */
+.footer-cta p {
+  margin: 0;
+}
+
+.footer-contact-block {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-button {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  padding: .8rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.footer-meta {
+  margin-top: 2rem;
+  font-size: .75rem;
+  color: var(--white);
+}
+
+.footer-linkedin {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   8. RESPONSIVE
+========================================================= */
+
 @media (max-width: 991.98px) {
-  :root { --section-space: 4rem; }
-  body { padding-top: 0; }
-  .hero { min-height: auto; }
 
-  .hero-image { aspect-ratio: 1 / 1; background-image: linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.68) 40%, rgba(0,0,0,0.58) 70%, rgba(0,0,0,0.48) 100%), url("../assets/blue-trampoline-hero.png"); background-size: cover; background-position: 90% center; }
+  :root {
+    --section-space: 4rem;
+  }
 
-  .focus-points { padding: 0; }
-  .focus-grid { display: block; }
-  .focus-item { flex-direction: row; text-align: left; padding: 1rem; border-right: 0; border-bottom: 1px solid var(--light-grey); }
-  .focus-icon { flex: 0 0 56px; margin: 0 1rem 0 0; }
-  .focus-text { flex: 1; }
-  .focus-text h2 { margin-bottom: .35rem; }
-  .focus-text h2::after { margin: .3rem 0 0; }
-  .focus-text p { font-size: .9rem; }
 
-  .navbar-collapse { padding-top: 1rem; padding-bottom: .5rem; }
-  .nav-link { padding: .75rem 0; }
-  
-  .about-section .container { max-width: none; padding-left: 0; padding-right: 0; }
-  .about-container { grid-template-columns: 1fr 1fr; }
-  .about-copy { padding: 1.25rem; }
-  .about-copy h2 { font-size: 1.35rem; }
-  .about-copy p { font-size: .8rem; line-height: 1.4; }
-  
-  .insight-card { flex: 0 0 82%; }
-  .insights-carousel { gap: 1rem; }
+  /* Hero */
 
-  .footer-main { grid-template-columns: 1fr; gap: 1.5rem; }
-  .footer-cta h2 { font-size: 1.5rem; }
-  .footer-contact-block { justify-content: flex-start; }
-  .footer-meta { font-size: .7rem; text-align: center; }
-} 
+  .hero-image {
+    aspect-ratio: 1 / 1;
+
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, .78) 0%,
+        rgba(0, 0, 0, .68) 40%,
+        rgba(0, 0, 0, .58) 70%,
+        rgba(0, 0, 0, .48) 100%
+      ),
+      url("../assets/blue-trampoline-hero.png");
+
+    background-size: cover;
+    background-position: 90% center;
+  }
+
+
+  /* Navigation */
+
+  .navbar-collapse {
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+  }
+
+  .nav-link {
+    padding: .75rem 0;
+  }
+
+
+  /* Focus points */
+
+  .focus-points {
+    padding: 0;
+  }
+
+  .focus-grid {
+    display: block;
+  }
+
+  .focus-item {
+    flex-direction: row;
+    text-align: left;
+    padding: 1rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  .focus-icon {
+    flex: 0 0 56px;
+    margin: 0 1rem 0 0;
+  }
+
+  .focus-text {
+    flex: 1;
+  }
+
+  .focus-text h2 {
+    margin-bottom: .35rem;
+  }
+
+  .focus-text h2::after {
+    margin: .3rem 0 0;
+  }
+
+  .focus-text p {
+    font-size: .9rem;
+  }
+
+
+  /* About */
+
+  .about-section .container {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-copy {
+    padding: 1.25rem;
+  }
+
+  .about-copy h2 {
+    font-size: 1.35rem;
+  }
+
+  .about-copy p {
+    font-size: .8rem;
+    line-height: 1.4;
+  }
+
+
+  /* Insights preview */
+
+  .insights-carousel {
+    gap: 1rem;
+  }
+
+  .insight-card {
+    flex: 0 0 82%;
+  }
+
+
+  /* Footer */
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .footer-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .footer-contact-block {
+    justify-content: flex-start;
+  }
+
+  .footer-meta {
+    font-size: .7rem;
+    text-align: center;
+  }
+}
