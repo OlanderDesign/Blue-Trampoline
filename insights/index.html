@@ -78,32 +78,15 @@
   }
 </script>
 
-<footer class="site-footer">
-  <div class="container footer-main">
-    <div class="footer-cta">
+<div id="footer"></div>
 
-      <h2>Har du noget, der er vigtigt,<br>men endnu ikke helt klart?</h2>
-
-      <p>Lad os tage en kaffe.</p>
-
-    </div>
-
-    <div class="footer-contact-block">
-      <a href="mailto:hello@bluetrampoline.com" class="footer-button">Let’s talk</a>
-    </div>
-
-  </div>
-
-  <div class="container footer-meta">
-
-    © 2026 Blue Trampoline | CVR 38284037 | <i class="bi bi-geo-alt"></i> Esbjerg, Danmark |
-
-    <a href="https://www.linkedin.com/company/blue-trampoline/" target="_blank" rel="noopener noreferrer" class="footer-linkedin">
-      <i class="bi bi-linkedin" style="color:var(--white);"></i>
-    </a>
-
-  </div>
-</footer>
+<script>
+  fetch("/footer.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
