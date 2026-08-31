@@ -32,6 +32,11 @@ function initPartnerNavbar() {
 
     logo.style.transform =
       `scale(${scale}) translate(${x}%, ${y}%)`
+      
+    const logoFrame = navbar.querySelector(".partner-logo-frame")
+
+logoFrame.style.borderRadius =
+  `${50 - (50 * logoProgress)}%` 
 
     /* Navbar: 90 -> 140 px */
     const navProgress = Math.min(

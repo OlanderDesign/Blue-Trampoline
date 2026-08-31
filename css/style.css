@@ -281,6 +281,7 @@ body {
   flex: 0 0 32px;
   overflow: hidden;
   background: var(--red);
+  border-radius: 50%;
 }
 
 .partner-navbar .partner-logo {
