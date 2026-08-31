@@ -1,0 +1,149 @@
+<svg
+  xmlns=“http://www.w3.org/2000/svg”
+  viewBox=“0 0 1200 760”
+  role=“img”
+  aria-labelledby=“title desc”
+>
+  <title id=“title”>Blue Trampoline partner network</title>
+  <desc id=“desc”>
+    Et fleksibelt netværk af relationer og kompetencer omkring Blue Trampoline.
+  </desc>
+
+  <!—
+    Brand colors
+    Blue:      #163A5F
+    Red:       #FF5A5F
+    Yellow:    #FFDD33
+    White:     #FBFAF8
+    Light grey:#D9DEE4
+    Light blue:#78BCE8
+  —>
+
+
+  <!— =========================================
+       ORBITS
+  ========================================== —>
+
+  <ellipse
+    cx=“600”
+    cy=“380”
+    rx=“535”
+    ry=“285”
+    fill=“none”
+    stroke=“#FBFAF8”
+    stroke-width=“3”
+    stroke-linecap=“round”
+    stroke-dasharray=“2 10”
+  />
+
+  <ellipse
+    cx=“600”
+    cy=“380”
+    rx=“455”
+    ry=“205”
+    fill=“none”
+    stroke=“#78BCE8”
+    stroke-width=“3”
+    stroke-linecap=“round”
+    stroke-dasharray=“2 11”
+    transform=“rotate(8 600 380)”
+  />
+
+  <ellipse
+    cx=“600”
+    cy=“380”
+    rx=“350”
+    ry=“165”
+    fill=“none”
+    stroke=“#FBFAF8”
+    stroke-width=“3”
+    stroke-linecap=“round”
+    stroke-dasharray=“2 10”
+    transform=“rotate(-8 600 380)”
+  />
+
+  <ellipse
+    cx=“600”
+    cy=“380”
+    rx=“415”
+    ry=“235”
+    fill=“none”
+    stroke=“#78BCE8”
+    stroke-width=“2”
+    opacity=“.75”
+    transform=“rotate(-17 600 380)”
+  />
+
+
+  <!— =========================================
+       CONNECTIONS
+  ========================================== —>
+
+  <line
+    x1=“600”
+    y1=“380”
+    x2=“390”
+    y2=“225”
+    stroke=“#FBFAF8”
+    stroke-width=“2”
+    opacity=“.8”
+  />
+
+  <line
+    x1=“985”
+    y1=“505”
+    x2=“1080”
+    y2=“285”
+    stroke=“#FBFAF8”
+    stroke-width=“2”
+    opacity=“.8”
+  />
+
+
+  <!— =========================================
+       SMALL NETWORK NODES
+  ========================================== —>
+
+  <circle cx=“198” cy=“350” r=“25” fill=“#FFDD33” />
+
+  <circle cx=“390” cy=“225” r=“30” fill=“#163A5F” />
+
+  <circle cx=“845” cy=“195” r=“28” fill=“#FF5A5F” />
+
+  <circle cx=“1080” cy=“285” r=“32” fill=“#35A7E0” />
+
+  <circle cx=“985” cy=“505” r=“26” fill=“#FFDD33” />
+
+  <circle cx=“120” cy=“515” r=“22” fill=“#D9DEE4” />
+
+
+  <!— Small accents —>
+
+  <circle cx=“290” cy=“205” r=“7” fill=“#78BCE8” />
+  <circle cx=“665” cy=“215” r=“6” fill=“#FF5A5F” />
+  <circle cx=“920” cy=“135” r=“7” fill=“#35A7E0” />
+  <circle cx=“380” cy=“530” r=“8” fill=“#163A5F” />
+  <circle cx=“790” cy=“565” r=“7” fill=“#FBFAF8” />
+  <circle cx=“390” cy=“395” r=“8” fill=“#FBFAF8” />
+  <circle cx=“820” cy=“415” r=“8” fill=“#78BCE8” />
+
+
+  <!— =========================================
+       BLUE TRAMPOLINE / MOMENTUM
+  ========================================== —>
+
+  <circle
+    cx=“600”
+    cy=“380”
+    r=“82”
+    fill=“#FBFAF8”
+  />
+
+  <circle
+    cx=“600”
+    cy=“380”
+    r=“42”
+    fill=“#FF5A5F”
+  />
+
+</svg>
