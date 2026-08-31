@@ -4,21 +4,37 @@ AOS.init({
   offset: 40
 });
 
-const navbar = document.querySelector('.navbar-blur');
-const hero = document.querySelector('.hero-image');
+const navbar = document.querySelector(".navbar-blur");
+const navbarCollapse = document.getElementById("mainNav");
 
 function updateNavbar() {
   if (!navbar) return;
 
-  if (window.scrollY > 20) {
-    navbar.classList.add('navbar-scrolled');
-  } else {
-    navbar.classList.remove('navbar-scrolled');
-  }
+  const menuOpen =
+    navbarCollapse &&
+    navbarCollapse.classList.contains("show");
+
+  navbar.classList.toggle(
+    "navbar-scrolled",
+    window.scrollY > 20 || menuOpen
+  );
 }
 
-window.addEventListener('scroll', updateNavbar);
-window.addEventListener('load', updateNavbar);
+window.addEventListener("scroll", updateNavbar, {
+  passive: true
+});
+
+window.addEventListener("load", updateNavbar);
+
+if (navbarCollapse) {
+  navbarCollapse.addEventListener("show.bs.collapse", () => {
+    navbar.classList.add("navbar-scrolled");
+  });
+
+  navbarCollapse.addEventListener("hidden.bs.collapse", () => {
+    updateNavbar();
+  });
+}
 
 const insightsCarousel = document.getElementById("insightsCarousel");
 
