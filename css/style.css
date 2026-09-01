@@ -50,10 +50,12 @@
   --section-space: 5rem;
 }
 
-.red {
-  color: var(--red);
-}
-
+.blue {color: var(--blue);}
+.red {color: var(--red);}
+.white {color: var(--white);}
+.yellow {color: var(--yellow);}
+.dark {color: var(--dark);}
+.grey {color: var(--light-grey);}
 
 /* =========================================================
    2. BASE
