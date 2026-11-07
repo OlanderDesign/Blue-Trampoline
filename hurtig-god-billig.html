@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hurtig, god, billig</title>
+<style>
+:root{
+  --blue:#163A5F;--red:#FFDD33;--white:#FBFAF8;--dark:#2E3135;--yellow:#FF5A5F;--grey:#F2F2F2;
+  --line:#DCDCD8;--muted:#5E636A;
+  --black:"Segoe UI Black","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+  --light:"Segoe UI Semilight","Segoe UI Light","Segoe UI",system-ui,-apple-system,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--white);color:var(--dark);font-family:var(--light);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:640px;margin:0 auto;padding:40px 20px 56px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-family:var(--black);font-weight:900;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin:0 0 20px}
+.eyebrow::before{content:"";width:28px;height:6px;background:var(--yellow);display:block}
+h1{font-family:var(--black);font-weight:900;font-size:clamp(36px,8vw,58px);line-height:1.02;margin:0 0 20px;letter-spacing:-.02em;color:var(--blue)}
+.lead{font-size:20px;color:var(--dark);margin:0 0 32px;max-width:50ch}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:18px 20px;border:2px solid var(--grey);border-radius:16px;background:var(--grey);color:var(--dark);font:inherit;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .12s}
+.opt:hover{border-color:var(--blue)}
+.opt:active{transform:scale(.99)}
+.opt:focus-visible,.sw:focus-visible,.cta:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.ico{flex:none;width:44px;height:44px;border-radius:12px;background:var(--white);color:var(--blue);display:grid;place-items:center;transition:inherit}
+.ico svg{width:22px;height:22px}
+.t{display:block;font-family:var(--black);font-weight:900;font-size:22px;letter-spacing:-.01em;line-height:1.2}
+.s{display:block;font-size:15px;color:var(--muted);transition:color .18s}
+.tag{margin-left:auto;font-family:var(--black);font-weight:900;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px;white-space:nowrap;display:none}
+.opt.on{background:var(--blue);border-color:var(--blue);color:var(--white)}
+.opt.on .ico{background:var(--yellow);color:var(--blue)}
+.opt.on .s{color:rgba(251,250,248,.82)}
+.opt.shake{animation:sh .35s}
+@keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.opt.unver{border:2px dashed var(--dark);background:var(--red);color:var(--dark)}
+.opt.unver .ico{background:var(--white);color:var(--dark)}
+.opt.unver .s{color:var(--dark)}
+.opt.unver .tag{display:inline-block;background:var(--dark);color:var(--red)}
+.opt.ver .tag{display:inline-block;background:var(--yellow);color:var(--dark)}
+.result{margin:24px 0 8px;padding:20px 22px;border-radius:16px;background:var(--grey);border:2px solid var(--grey);font-size:18px;min-height:92px;transition:border-color .2s,background .2s}
+.result.warn{background:var(--red);border-color:var(--red);color:var(--dark)}
+.result.ok{background:var(--yellow);border-color:var(--yellow);color:var(--dark)}
+.result b{font-family:var(--black);font-weight:900}
+.rule{height:2px;background:var(--grey);margin:32px 0}
+.sw{display:flex;align-items:center;gap:16px;width:100%;text-align:left;padding:16px 4px;border:0;background:none;font:inherit;color:var(--dark);cursor:pointer;border-radius:12px}
+.sw .lab{flex:1}
+.sw .lab b{display:block;font-family:var(--black);font-weight:900;font-size:18px}
+.sw .lab span{font-size:15px;color:var(--muted)}
+.track{flex:none;width:56px;height:32px;border-radius:999px;background:#CFCFCB;position:relative;transition:background .2s}
+.track::after{content:"";position:absolute;top:4px;left:4px;width:24px;height:24px;border-radius:50%;background:var(--white);transition:transform .2s,background .2s}
+.sw[aria-checked="true"] .track{background:var(--blue)}
+.sw[aria-checked="true"] .track::after{transform:translateX(24px);background:var(--yellow)}
+#smeWrap{display:none}
+#smeWrap.show{display:block}
+.note{font-size:16px;color:var(--dark);margin:28px 0 0;padding-left:16px;border-left:6px solid var(--yellow)}
+.cta{display:inline-block;margin-top:24px;padding:14px 22px;border-radius:999px;border:0;background:var(--red);color:var(--dark);font-family:var(--black);font-weight:900;font-size:15px;cursor:pointer;transition:transform .12s}
+.cta:hover{transform:translateY(-1px)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Faglighed i AI-tiden</p>
+  <h1>Hurtig, god, billig.<br>Vælg to.</h1>
+  <p class="lead">Den gamle regel har holdt i årtier. Nu er der kommet et værktøj, der ser ud til at bryde den. Spørgsmålet er, hvad der sker med kvaliteten.</p>
+
+  <div class="opts" id="opts">
+    <button class="opt" data-k="hurtig" aria-pressed="false">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></span>
+      <span><span class="t">Hurtig</span><span class="s">Leveret, mens behovet stadig er der</span></span>
+      <span class="tag"></span>
+    </button>
+    <button class="opt" data-k="god" aria-pressed="false">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>
+      <span><span class="t">God</span><span class="s">Holder, når nogen, der kender faget, ser på det</span></span>
+      <span class="tag"></span>
+    </button>
+    <button class="opt" data-k="billig" aria-pressed="false">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3h4"/></svg></span>
+      <span><span class="t">Billig</span><span class="s">Ressourcerne rækker længere</span></span>
+      <span class="tag"></span>
+    </button>
+  </div>
+
+  <div class="result" id="result" role="status" aria-live="polite"></div>
+
+  <div class="rule"></div>
+
+  <button class="sw" id="ai" role="switch" aria-checked="false">
+    <span class="lab"><b>Slå AI til</b><span>Fjerner begrænsningen. Eller gør den?</span></span>
+    <span class="track"></span>
+  </button>
+
+  <div id="smeWrap">
+    <button class="sw" id="sme" role="switch" aria-checked="false">
+      <span class="lab"><b>Fagekspert i loopet</b><span>En, der ved, hvad "godt" er i netop dit felt</span></span>
+      <span class="track"></span>
+    </button>
+  </div>
+
+  <p class="note">AI gør det hurtigt og billigt at producere. Det gør det ikke hurtigere at vide, om resultatet er rigtigt. Den vurdering kræver stadig en fagekspert, og den bliver mere værd, jo mere der bliver produceret.</p>
+  <button class="cta" id="talk" type="button">Hvor sikres kvaliteten bedst?</button>
+</main>
+
+<script>
+(function(){
+  var order=[],ai=false,sme=false;
+  var keys=['hurtig','god','billig'];
+  var label={hurtig:'hurtigt',god:'godt',billig:'billigt'};
+  var btns={};
+  document.querySelectorAll('.opt').forEach(function(b){btns[b.dataset.k]=b});
+  var res=document.getElementById('result');
+  var aiSw=document.getElementById('ai'),smeSw=document.getElementById('sme'),smeWrap=document.getElementById('smeWrap');
+
+  function setText(html,cls){res.innerHTML=html;res.className='result'+(cls?' '+cls:'')}
+
+  function render(){
+    keys.forEach(function(k){
+      var b=btns[k],on=ai||order.indexOf(k)>=0;
+      b.classList.toggle('on',on);
+      b.setAttribute('aria-pressed',on?'true':'false');
+      b.classList.remove('unver','ver');
+      var tag=b.querySelector('.tag');tag.textContent='';
+      if(ai&&k==='god'){
+        if(sme){b.classList.add('ver');tag.textContent='Verificeret'}
+        else{b.classList.remove('on');b.classList.add('unver');tag.textContent='Uverificeret';b.setAttribute('aria-pressed','false')}
+      }
+    });
+    smeWrap.classList.toggle('show',ai);
+    aiSw.setAttribute('aria-checked',ai?'true':'false');
+    smeSw.setAttribute('aria-checked',sme?'true':'false');
+
+    if(ai){
+      if(!sme){
+        setText('<b>Hurtig og billig er nu næsten gratis.</b> God er ikke fulgt med. Output ser færdigt ud, men ingen har vurderet, om det holder.','warn');
+      }else{
+        setText('<b>Alle tre er mulige.</b> Fageksperten sidder ikke på alt arbejdet, men på de vurderinger, hvor kvaliteten afgøres.','ok');
+      }
+      return;
+    }
+    if(order.length===0){setText('Vælg to.','')}
+    else if(order.length===1){setText('Du har valgt <b>'+order[0]+'</b>. Vælg én mere.','')}
+    else{
+      var miss=keys.filter(function(k){return order.indexOf(k)<0})[0];
+      setText('Du får <b>'+order[0]+'</b> og <b>'+order[1]+'</b>, men ikke '+label[miss]+'.','');
+    }
+  }
+
+  Object.keys(btns).forEach(function(k){
+    btns[k].addEventListener('click',function(){
+      if(ai)return;
+      var i=order.indexOf(k);
+      if(i>=0){order.splice(i,1)}
+      else{
+        if(order.length===2){
+          var old=order.shift(),ob=btns[old];
+          ob.classList.remove('shake');void ob.offsetWidth;ob.classList.add('shake');
+        }
+        order.push(k);
+      }
+      render();
+    });
+  });
+
+  aiSw.addEventListener('click',function(){ai=!ai;if(!ai)sme=false;render()});
+  smeSw.addEventListener('click',function(){sme=!sme;render()});
+  document.getElementById('talk').addEventListener('click',function(){
+    var t='Subject matter experts og kvalitet i AI-tiden: hvor i processen sikrer vi kvaliteten bedst?';
+    if(navigator.clipboard){navigator.clipboard.writeText(t).catch(function(){})}
+    this.textContent='Spørgsmålet er kopieret';
+  });
+  render();
+})();
+</script>
+</body>
+</html>
